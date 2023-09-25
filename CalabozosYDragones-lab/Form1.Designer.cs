@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.TimerDado = new System.Windows.Forms.Timer(this.components);
             this.pBdado = new System.Windows.Forms.PictureBox();
             this.dado = new System.Windows.Forms.Label();
             this.dadoR = new System.Windows.Forms.Label();
@@ -78,10 +78,10 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // timer1
+            // TimerDado
             // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.TimerDado.Interval = 1000;
+            this.TimerDado.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pBdado
             // 
@@ -351,7 +351,7 @@
 
         #endregion
         public System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer TimerDado;
         private System.Windows.Forms.PictureBox pBdado;
         private System.Windows.Forms.Label dado;
         private System.Windows.Forms.Label dadoR;
