@@ -335,7 +335,7 @@ namespace CalabozosYDragones_lab
                         {
                             CaballeroRosa.Left = 15 + 300;
                             CaballeroRosa.Top = 5 + 300;
-                            MessageBox.Show("GANO EL CABALLERO ROJO");
+                            MessageBox.Show("GANO EL CABALLERO ROJOo");
                             columnaRosado = 0;
                             filaRosado = 0;
                             posicionA = 0;
