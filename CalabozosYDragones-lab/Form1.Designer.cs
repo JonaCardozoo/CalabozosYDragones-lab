@@ -33,7 +33,7 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pBdado = new System.Windows.Forms.PictureBox();
-            this.dadoA = new System.Windows.Forms.Label();
+            this.dado = new System.Windows.Forms.Label();
             this.dadoR = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dragoncito = new System.Windows.Forms.Timer(this.components);
@@ -86,21 +86,21 @@
             // pBdado
             // 
             this.pBdado.Image = ((System.Drawing.Image)(resources.GetObject("pBdado.Image")));
-            this.pBdado.Location = new System.Drawing.Point(983, 333);
+            this.pBdado.Location = new System.Drawing.Point(970, 374);
             this.pBdado.Name = "pBdado";
             this.pBdado.Size = new System.Drawing.Size(224, 208);
             this.pBdado.TabIndex = 7;
             this.pBdado.TabStop = false;
             // 
-            // dadoA
+            // dado
             // 
-            this.dadoA.AutoSize = true;
-            this.dadoA.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dadoA.Location = new System.Drawing.Point(1034, 397);
-            this.dadoA.Name = "dadoA";
-            this.dadoA.Size = new System.Drawing.Size(0, 117);
-            this.dadoA.TabIndex = 8;
-            this.dadoA.VisibleChanged += new System.EventHandler(this.dadoA_VisibleChanged);
+            this.dado.AutoSize = true;
+            this.dado.Font = new System.Drawing.Font("Impact", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dado.Location = new System.Drawing.Point(1034, 397);
+            this.dado.Name = "dado";
+            this.dado.Size = new System.Drawing.Size(0, 117);
+            this.dado.TabIndex = 8;
+            this.dado.VisibleChanged += new System.EventHandler(this.dadoA_VisibleChanged);
             // 
             // dadoR
             // 
@@ -334,7 +334,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pBdado);
             this.Controls.Add(this.dadoR);
-            this.Controls.Add(this.dadoA);
+            this.Controls.Add(this.dado);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Form1";
@@ -353,7 +353,7 @@
         public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.PictureBox pBdado;
-        private System.Windows.Forms.Label dadoA;
+        private System.Windows.Forms.Label dado;
         private System.Windows.Forms.Label dadoR;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Timer dragoncito;

@@ -27,19 +27,30 @@ namespace CalabozosYDragones_lab
 
 
         Pieza pieza;
-        int a = 0, c, f;
-        int posicionA = 0, posicionB = 0;
+        int a = 0;
+        int columnaRosado = 0;
+        int filaRosado = 0;
+        int columnaAmarillo = 0;
+        int filaAmarillo = 0;
+        int columnaAzul = 0;
+        int filaAzul = 0;
+
+
+        int posicionA = 0;
+        int posicionB = 0;
+        int posicionC = 0;
         int jugador = 0;
         int posicionDragon = 0;
-        int columnaMaquina = 0;
-        int filaMaquina = 0;
+        int columna = 0;
+        int fila = 0;
         int posiciondragon2=0;
         int  columnaDragon2 =0;
         int filaDragon2 =0;
         int columnaDragon1 =0;
         int filaDragon1 =0;
-        
-        
+        int turno = 0;
+
+
         public Form1()
         {
             InitializeComponent();
@@ -54,7 +65,7 @@ namespace CalabozosYDragones_lab
         private void timer1_Tick(object sender, EventArgs e)
         {
             pBdado.Visible = false;
-            dadoA.Visible = true;
+            dado.Visible = true;
         }
 
         private void Iniciar()
@@ -96,19 +107,7 @@ namespace CalabozosYDragones_lab
             
         }
 
-        private void BtnMaquina_Click(object sender, EventArgs e)
-        {
-            dadoA.Visible = false;
-            jugador = 2;
-            pBdado.Visible = true;         
-            timer1.Stop();
-            timer1.Start();
-            //posicionB += caballero.Mover();
-            columnaMaquina = (posicionB % 10) * 90;
-            filaMaquina = (posicionB / 10) * 90;
-            dadoA.Text = pieza.Posicion.ToString();
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -165,8 +164,6 @@ namespace CalabozosYDragones_lab
                 CaballeroVerde.Visible = true;
             }
 
-
-
             if (comboBox1.SelectedIndex == 1)
             {
 
@@ -185,31 +182,83 @@ namespace CalabozosYDragones_lab
                 dragones.FilaDragonRosa2 = (DragonHumano2 / 10) * 90;
                 #endregion
 
+                #region DragonVerde1
+
+                #endregion
+
+                #region DragonVerde2
+
+                #endregion
+
+                #region DragonAmarillo1
+
+                #endregion
+
+                #region DragonAmarillo2
+
+                #endregion
+
+                #region DragonAzul1
+
+                #endregion
+
+                #region DragonAzul2
+
+                #endregion
+
+
+
+
             }
-            
-            dadoA.Visible = false;
-            jugador = 1;
-            pBdado.Visible = true;
-            timer1.Stop();
-            timer1.Start();
-            posicionA += caballero.Mover();
-            c = (posicionA % 10) * 90;
-            f = (posicionA / 10) * 90;
-            dadoA.Text = caballero.Numero.ToString();
+
+            if (turno == 1)
+            {
+                dado.Visible = false;
+                jugador = 1;
+                pBdado.Visible = true;
+                timer1.Stop();
+                timer1.Start();
+                posicionA += caballero.Mover();
+                columnaRosado = (posicionA % 10) * 90;
+                filaRosado = (posicionA / 10) * 90;
+                dado.Text = caballero.Numero.ToString();
+
+                
+                turno = 2;
+            }
+
+
+            else if (turno == 2)
+            {
+                dado.Visible = false;
+                jugador = 2;
+                pBdado.Visible = true;
+                timer1.Stop();
+                timer1.Start();
+                posicionB += caballero.Mover();
+                columnaAzul = (posicionB % 10) * 90;
+                filaAzul = (posicionB / 10) * 90;
+                dado.Text = caballero.Numero.ToString();
+                if(numeros == 2)
+                    turno = 3;
+            }
+            else if(turno == 3)
+            {
+                dado.Visible = false;
+                jugador = 3;
+                pBdado.Visible = true;
+                timer1.Stop();
+                timer1.Start();
+                posicionC += caballero.Mover();
+                columnaAmarillo = (posicionB % 10) * 90;
+                filaAmarillo = (posicionB / 10) * 90;
+                dado.Text = caballero.Numero.ToString();
+            }
 
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-
-            decimal Jugadores = numericUpDown1.Value;
-
-            if(Jugadores == 1)
-            {
-                CaballeroRosa.Visible = true;
-                CaballeroAzul.Visible = true;
-
-            }
 
         }
 
@@ -279,40 +328,45 @@ namespace CalabozosYDragones_lab
                         DragonRosa1.Top = 65 + dragones.FilaDragonRosa1;
                         DragonRosa2.Left = 55 + dragones.ColumnaDragonRosa2;
                         DragonRosa2.Top = 65 + dragones.FilaDragonRosa2;
-                        CaballeroRosa.Left = 55 + c;
-                        CaballeroRosa.Top = 65 + f;
+                        CaballeroRosa.Left = 55 + columnaRosado;
+                        CaballeroRosa.Top = 65 + filaRosado;
                         
                         if (posicionA >= 49)
                         {
                             CaballeroRosa.Left = 15 + 300;
                             CaballeroRosa.Top = 5 + 300;
                             MessageBox.Show("GANO EL CABALLERO ROJO");
-                            c = 0;
-                            f = 0;
+                            columnaRosado = 0;
+                            filaRosado = 0;
                             posicionA = 0;
                             Iniciar();
                             
-
                         }
 
                     }
                     break;
                 case 2:
                     {
-                        CaballeroAzul.Left = 55 + columnaMaquina;
-                        CaballeroAzul.Top = 65 + filaMaquina;
-                        dadoR.Text = a.ToString();
+                        CaballeroAzul.Left = 55 + columna;
+                        CaballeroAzul.Top = 65 + fila;
                         if (posicionB >= 49)
                         {
                             CaballeroAzul.Left = 15 + 300;
                             CaballeroAzul.Top = 38 + 300;
                             MessageBox.Show("GANO EL CABALLERO AZUL");
-                            columnaMaquina = 0;
-                            filaMaquina = 0;
+                            columnaAzul = 0;
+                            filaAzul = 0;
                             posicionB = 0;
                             Iniciar();
                             
                         }
+                        break;
+
+
+                    }
+
+                    case 3:
+                    {
                         break;
                     }
             }
