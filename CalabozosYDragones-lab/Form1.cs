@@ -16,16 +16,16 @@ namespace CalabozosYDragones_lab
 {
     public partial class Form1 : Form
     {
-        static Panel Hola { get; set; }
-        Random dragon1 = new Random();
-        Random dragon2 = new Random();
-        Random dado = new Random();
-        GameOver game = new GameOver();
+        static Panel Hola {  get; set; }
+        
         Sistema sistema = new Sistema();
         Intermedio intermedio;
 
         Caballero caballero =  new Caballero(Hola);
         Dragones dragones = new Dragones(Hola);
+        Dragones dragones2 = new Dragones(Hola);
+
+
         Pieza pieza;
         int a = 0, c, f;
         int posicionA = 0, posicionB = 0;
@@ -38,8 +38,6 @@ namespace CalabozosYDragones_lab
         int filaDragon2 =0;
         int columnaDragon1 =0;
         int filaDragon1 =0;
-        int DragonHumano = 0;
-        int DragonHumano2 = 0;
         
         
         public Form1()
@@ -53,17 +51,6 @@ namespace CalabozosYDragones_lab
 
         }
 
-        private void BtnHumano_Click_1(object sender, EventArgs e)
-        {
-            
-
-
-            
-            
-            //posicionA = intermedio.RetrocesoDragon1();
-
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             pBdado.Visible = false;
@@ -74,8 +61,9 @@ namespace CalabozosYDragones_lab
         {
             caballero.PosicionInicialCaballero(CaballeroRosa);
             caballero.PosicionInicialCaballero(CaballeroAzul);
+            caballero.PosicionInicialCaballero(CaballeroAmarillo);
+            caballero.PosicionInicialCaballero(CaballeroVerde);
 
-            
             //dragones.PosicionInicialDH(DragoncitoHumano1);
 
         }
@@ -97,7 +85,7 @@ namespace CalabozosYDragones_lab
             DragonAzul2.Visible = false;
             DragonVerde1.Visible=false;
             DragonVerde2.Visible=false;
-
+            CaballeroRosa.Visible = true;
 
             //PantallaCarga pantallaCarga = new PantallaCarga(6);
             //pantallaCarga.ShowDialog();
@@ -120,22 +108,6 @@ namespace CalabozosYDragones_lab
             filaMaquina = (posicionB / 10) * 90;
             dadoA.Text = pieza.Posicion.ToString();
 
-            //if (posicionB == posicionDragon)
-            //{
-            //    posicionB -= 5;
-            //    columnaMaquina = (posicionB % 10) * 90;
-            //    filaMaquina = (posicionB / 10) * 90;
-            //    MessageBox.Show("Retrocede 5 lugares");
-            //}
-            //if (posicionB == posiciondragon2)
-            //{
-            //    posicionB -= 5;
-            //    columnaMaquina = (posicionB % 10) * 90;
-            //    filaMaquina = (posicionB / 10) * 90;
-            //    MessageBox.Show("Retrocede 5 lugares");
-
-            //}
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -145,11 +117,6 @@ namespace CalabozosYDragones_lab
             
         }
         
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void DragoncitoHumano2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -179,7 +146,47 @@ namespace CalabozosYDragones_lab
         private void button1_Click_1(object sender, EventArgs e)
         {
             //intermedio = new Intermedio(dragones.Posicion, Convert.ToInt32(numericUpDown1.Value));
+            decimal numeros = numericUpDown1.Value;
 
+            if(numeros == 1)
+            {
+                CaballeroAzul.Visible = true;
+
+            }
+            else if(numeros == 2)
+            {
+                CaballeroAzul.Visible=true;
+                CaballeroAmarillo.Visible = true;
+            }
+            else if (numeros == 3)
+            {
+                CaballeroAzul.Visible = true;
+                CaballeroAmarillo.Visible = true;
+                CaballeroVerde.Visible = true;
+            }
+
+
+
+            if (comboBox1.SelectedIndex == 1)
+            {
+
+                #region DragoRosa1
+                int DragonHumano = 0;
+                DragonHumano = dragones.MoverDragon();
+                dragones.ColumnaDragonRosa1 = (DragonHumano % 10) * 90;
+                dragones.FilaDragonRosa1 = (DragonHumano / 10) * 90;
+
+                #endregion
+
+                #region DragonRosa2
+                int DragonHumano2 = 0;
+                DragonHumano2 = dragones.MoverDragon();
+                dragones.ColumnaDragonRosa2 = (DragonHumano2 % 10) * 90;
+                dragones.FilaDragonRosa2 = (DragonHumano2 / 10) * 90;
+                #endregion
+
+            }
+            
             dadoA.Visible = false;
             jugador = 1;
             pBdado.Visible = true;
@@ -190,31 +197,20 @@ namespace CalabozosYDragones_lab
             f = (posicionA / 10) * 90;
             dadoA.Text = caballero.Numero.ToString();
 
-            if (comboBox1.SelectedIndex == 1)
-            {
-
-                DragonHumano = dragones.MoverDragon();
-                #region DragoRosa
-                dragones.ColumnaDragon = (DragonHumano % 10) * 90;
-                dragones.FilaDragon = (DragonHumano / 10) * 90;
-
-                #endregion
-
-                #region DragonRosa
-                DragonHumano = dragones.MoverDragon();
-                dragones.ColumnaDragon = (DragonHumano % 10) * 90;
-                dragones.FilaDragon = (DragonHumano / 10) * 90;
-
-                #endregion
-
-            }
-
         }
 
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-             
-            
+
+            decimal Jugadores = numericUpDown1.Value;
+
+            if(Jugadores == 1)
+            {
+                CaballeroRosa.Visible = true;
+                CaballeroAzul.Visible = true;
+
+            }
+
         }
 
         private void DragonAmarillo2_Paint(object sender, PaintEventArgs e)
@@ -229,28 +225,45 @@ namespace CalabozosYDragones_lab
         
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if (comboBox1.SelectedIndex == 0)
-            {
-                CaballeroRosa.Visible = true;
-                comboBox1.Enabled = false;
-            }
-            
-             if (comboBox1.SelectedIndex == 1)
+                
+             if (comboBox1.SelectedIndex == 1 || comboBox1.SelectedIndex == 2)
              {
                 dragones = new Dragones(DragonRosa1);
                 dragones = new Dragones(DragonRosa2);
-
-                //dragones = new Dragones(DragonAzul1);
-                //dragones = new Dragones(DragonAzul2);
+                dragones = new Dragones(DragonAzul1);
+                dragones = new Dragones(DragonAzul2);
                 dragones.PosicionInicialDragones(DragonRosa1);
                 dragones.PosicionInicialDragones(DragonRosa2);
-                //dragones.PosicionInicialDragones(DragonAzul1);
-                //dragones.PosicionInicialDragones(DragonAzul2);
-
+                dragones.PosicionInicialDragones(DragonAzul1);
+                dragones.PosicionInicialDragones(DragonAzul2);
+                dragones.PosicionInicialDragones(DragonAmarillo1);
+                dragones.PosicionInicialDragones(DragonAmarillo2);
+                dragones.PosicionInicialDragones(DragonAmarillo1);
+                dragones.PosicionInicialDragones(DragonAmarillo2);
+                dragones.PosicionInicialDragones(DragonVerde1);
+                dragones.PosicionInicialDragones(DragonVerde2);
+                
                 DragonRosa1.Visible = true;
                 DragonRosa2.Visible = true;
+                DragonVerde1.Visible = true;
+                DragonVerde2.Visible = true;
+                DragonAmarillo1.Visible = true;
+                DragonAmarillo2.Visible = true;
+                DragonAzul1.Visible = true;
+                DragonAzul2.Visible = true;
 
+             }
+
+            else
+            {
+                DragonRosa1.Visible = false;
+                DragonRosa2.Visible = false;
+                DragonVerde1.Visible = false;
+                DragonVerde2.Visible = false;
+                DragonAmarillo1.Visible = false;
+                DragonAmarillo2.Visible = false;
+                DragonAzul1.Visible = false;
+                DragonAzul2.Visible = false;
             }
             
         }
@@ -262,10 +275,10 @@ namespace CalabozosYDragones_lab
                 case 1:
                     {
 
-                        DragonRosa2.Left = 55 + dragones.ColumnaDragon;
-                        DragonRosa2.Top = 65 + dragones.FilaDragon;
-                        DragonRosa1.Left = 55 + dragones.ColumnaDragon;
-                        DragonRosa1.Top = 65 + dragones.FilaDragon;
+                        DragonRosa1.Left = 55 + dragones.ColumnaDragonRosa1;
+                        DragonRosa1.Top = 65 + dragones.FilaDragonRosa1;
+                        DragonRosa2.Left = 55 + dragones.ColumnaDragonRosa2;
+                        DragonRosa2.Top = 65 + dragones.FilaDragonRosa2;
                         CaballeroRosa.Left = 55 + c;
                         CaballeroRosa.Top = 65 + f;
                         

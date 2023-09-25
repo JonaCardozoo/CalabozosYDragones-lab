@@ -12,7 +12,7 @@ namespace CalabozosYDragones_lab.Clases
 
         Dragones[] dragones = new Dragones[8];  
         int contador = 0;
-       
+        
         int posicionA = 0;
         int posicionB = 0;
         int c, f, columnaMaquina, filaMaquina;

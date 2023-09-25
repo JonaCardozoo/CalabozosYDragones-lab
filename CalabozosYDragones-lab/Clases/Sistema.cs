@@ -17,7 +17,6 @@ namespace CalabozosYDragones_lab
         Random LugarRandom = new Random();
         string[] jugador = new string[1];
         int contador = 0;
-        public int Posicion { get; set; }
         string Nombre { get; set; }
             
         public Sistema()

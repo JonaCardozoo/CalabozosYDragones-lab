@@ -72,7 +72,7 @@
             "Basico",
             "Intermedio",
             "Experto"});
-            this.comboBox1.Location = new System.Drawing.Point(1071, 83);
+            this.comboBox1.Location = new System.Drawing.Point(1033, 38);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(136, 28);
             this.comboBox1.TabIndex = 0;
@@ -129,7 +129,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(940, 83);
+            this.label1.Location = new System.Drawing.Point(1049, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 25);
             this.label1.TabIndex = 15;
@@ -139,18 +139,18 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Palatino Linotype", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(934, 141);
+            this.label2.Location = new System.Drawing.Point(991, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(131, 25);
+            this.label2.Size = new System.Drawing.Size(246, 25);
             this.label2.TabIndex = 16;
-            this.label2.Text = "JUGADORES";
+            this.label2.Text = "JUGADORES VIRTUALES";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.numericUpDown1.Font = new System.Drawing.Font("MV Boli", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
-            this.numericUpDown1.Location = new System.Drawing.Point(1071, 136);
+            this.numericUpDown1.Location = new System.Drawing.Point(1033, 109);
             this.numericUpDown1.Maximum = new decimal(new int[] {
             3,
             0,
@@ -178,7 +178,7 @@
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.button1.FlatAppearance.BorderSize = 1200;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(996, 197);
+            this.button1.Location = new System.Drawing.Point(1007, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(173, 68);
             this.button1.TabIndex = 18;
