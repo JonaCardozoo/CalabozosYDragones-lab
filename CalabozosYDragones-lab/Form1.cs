@@ -209,12 +209,10 @@ namespace CalabozosYDragones_lab
 
                 }
 
-                if (comboBox1.SelectedIndex == 2 && cont == 0)
-                {
+                    
                     if (comboBox1.SelectedIndex == 2 && cont == 0)
                     {
-
-
+                        
                         calabozo.PosicionCala(Calabozo1);
                         calabozo.PosicionCala(Calabozo2);
                         calabozo.PosicionCala(Calabozo3);
@@ -224,21 +222,7 @@ namespace CalabozosYDragones_lab
 
                     }
                     cont = 1;
-
-                    if (turno == 0)
-                    {
-
-
-                        calabozo.PosicionCala(Calabozo1);
-                        calabozo.PosicionCala(Calabozo2);
-                        calabozo.PosicionCala(Calabozo3);
-                        Calabozo2.Visible = true;
-                        Calabozo1.Visible = true;
-                        Calabozo3.Visible = true;
-
-                    }
-                    cont = 1;
-
+                    
                     if (turno == 0)
                     {
 
@@ -307,12 +291,13 @@ namespace CalabozosYDragones_lab
 
                         turno = 0;
                     }
-                }
-                else
-                    MessageBox.Show("ERROR, ELIJA MODALIDAD DE JUEGO", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
+            else
+                MessageBox.Show("ERROR, ELIJA MODALIDAD DE JUEGO", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            }
+
+        }
 
             private void numericUpDown1_ValueChanged(object sender, EventArgs e)
             {
