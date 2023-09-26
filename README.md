@@ -55,5 +55,12 @@ Dragon Rosado
 
 
 
+Cabalozo
+
+![image](https://github.com/JonaCardozoo/CalabozosYDragones-lab/assets/102664372/d5a3fd09-044f-4a6e-843f-f9835c886ddb)
+
+
+
+
 
 
