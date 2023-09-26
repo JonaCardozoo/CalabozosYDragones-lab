@@ -27,7 +27,10 @@ namespace CalabozosYDragones_lab
         Dragones dragones2 = new Dragones(Hola);
         Experto experto;
         Calabozo calabozo = new Calabozo(Hola);
+<<<<<<< HEAD
 
+=======
+>>>>>>> b8aa058a83a0992f96d9e98ca214624ef190129f
 
         Pieza pieza;
         int a = 0;
@@ -134,7 +137,7 @@ namespace CalabozosYDragones_lab
         {
 
         }
-
+        int cont = 0;
         private void button1_Click_1(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem != null)
@@ -210,8 +213,27 @@ namespace CalabozosYDragones_lab
 
                 }
 
+<<<<<<< HEAD
                 if (comboBox1.SelectedIndex == 2 && cont == 0)
                 {
+=======
+            if (comboBox1.SelectedIndex == 2 && cont == 0)
+            {
+
+
+                calabozo.PosicionCala(Calabozo1);
+                calabozo.PosicionCala(Calabozo2);
+                calabozo.PosicionCala(Calabozo3);
+                Calabozo2.Visible = true;
+                Calabozo1.Visible = true;
+                Calabozo3.Visible = true;
+
+            }
+            cont = 1;
+
+            if (turno == 0)
+            {
+>>>>>>> b8aa058a83a0992f96d9e98ca214624ef190129f
 
 
                     calabozo.PosicionCala(Calabozo1);
@@ -344,6 +366,12 @@ namespace CalabozosYDragones_lab
                 DragonAzul2.Visible = true;
 
              }
+            if (comboBox1.SelectedIndex == 2)
+            {
+                calabozo.PosicionInicialCala(Calabozo1);
+                calabozo.PosicionInicialCala(Calabozo2);
+                calabozo.PosicionInicialCala(Calabozo3);
+            }
 
             if (comboBox1.SelectedIndex == 2)
             {
