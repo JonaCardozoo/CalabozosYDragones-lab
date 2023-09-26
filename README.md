@@ -1,7 +1,9 @@
 # CalabozosYDragones-lab
+Tablero
+
 
 ![image](https://github.com/JonaCardozoo/CalabozosYDragones-lab/assets/102664372/ccfb491d-f2c2-44bd-aa46-b0969c1dc133)
-Tablero
+
 Caballero Rosado
 ![image](https://github.com/JonaCardozoo/CalabozosYDragones-lab/assets/102664372/f6af02f0-0f28-47e4-92af-ba427e680533)
 Caballero Azul
