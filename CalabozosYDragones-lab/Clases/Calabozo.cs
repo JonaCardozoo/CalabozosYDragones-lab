@@ -4,21 +4,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CalabozosYDragones_lab.Clases
 {
     internal class Calabozo
     {
-        public int Calabozo1 { get; set; }
-        public int Calabozo2 { get; set; }
-        public int Calabozo3 { get; set; }
-
-        public Calabozo(int posicion) 
+        public Panel Cala { get; set; }
+        Random random = new Random();
+        public void PosicionCala(Panel Calabozo)
         {
-            Calabozo1 = posicion;
-            Calabozo2 = posicion;
-            Calabozo3 = posicion;
+            int pos = random.Next(1, 49);
+            Calabozo.Left = 55 + ((pos % 10) * 90);
+            Calabozo.Top = 70 + ((pos / 10) * 90);
         }
-      
+        public void PosicionInicialCala(Panel Calabozo)
+        {
+            Calabozo.Left = 35;
+            Calabozo.Top = 50;
+        }
+        public Calabozo(Panel posicion)
+        {
+            Cala = posicion;
+        }
+
+
     }
 }

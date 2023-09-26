@@ -53,10 +53,11 @@
             this.DragonRosa2 = new System.Windows.Forms.Panel();
             this.DragonRosa1 = new System.Windows.Forms.Panel();
             this.Calabozo1 = new System.Windows.Forms.Panel();
-            this.Calabozo3 = new System.Windows.Forms.Panel();
-            this.Calabozo2 = new System.Windows.Forms.Panel();
             this.CaballeroAzul = new System.Windows.Forms.Panel();
             this.CaballeroRosa = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.Calabozo2 = new System.Windows.Forms.Panel();
+            this.Calabozo3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pBdado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -64,8 +65,8 @@
             // 
             // comboBox1
             // 
-            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.comboBox1, "comboBox1");
             this.comboBox1.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
@@ -120,8 +121,8 @@
             // 
             // numericUpDown1
             // 
-            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.numericUpDown1, "numericUpDown1");
             this.numericUpDown1.ForeColor = System.Drawing.Color.Black;
             this.numericUpDown1.Maximum = new decimal(new int[] {
             3,
@@ -144,11 +145,15 @@
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 1200;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // DragonVerde2
@@ -207,16 +212,6 @@
             resources.ApplyResources(this.Calabozo1, "Calabozo1");
             this.Calabozo1.Name = "Calabozo1";
             // 
-            // Calabozo3
-            // 
-            resources.ApplyResources(this.Calabozo3, "Calabozo3");
-            this.Calabozo3.Name = "Calabozo3";
-            // 
-            // Calabozo2
-            // 
-            resources.ApplyResources(this.Calabozo2, "Calabozo2");
-            this.Calabozo2.Name = "Calabozo2";
-            // 
             // CaballeroAzul
             // 
             resources.ApplyResources(this.CaballeroAzul, "CaballeroAzul");
@@ -227,11 +222,30 @@
             resources.ApplyResources(this.CaballeroRosa, "CaballeroRosa");
             this.CaballeroRosa.Name = "CaballeroRosa";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            resources.ApplyResources(this.listBox1, "listBox1");
+            this.listBox1.Name = "listBox1";
+            // 
+            // Calabozo2
+            // 
+            resources.ApplyResources(this.Calabozo2, "Calabozo2");
+            this.Calabozo2.Name = "Calabozo2";
+            // 
+            // Calabozo3
+            // 
+            resources.ApplyResources(this.Calabozo3, "Calabozo3");
+            this.Calabozo3.Name = "Calabozo3";
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.Calabozo3);
+            this.Controls.Add(this.Calabozo2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.DragonVerde2);
             this.Controls.Add(this.DragonVerde1);
             this.Controls.Add(this.DragonAzul2);
@@ -243,8 +257,6 @@
             this.Controls.Add(this.DragonRosa2);
             this.Controls.Add(this.DragonRosa1);
             this.Controls.Add(this.Calabozo1);
-            this.Controls.Add(this.Calabozo3);
-            this.Controls.Add(this.Calabozo2);
             this.Controls.Add(this.CaballeroAzul);
             this.Controls.Add(this.CaballeroRosa);
             this.Controls.Add(this.button1);
@@ -291,10 +303,11 @@
         private System.Windows.Forms.Panel DragonRosa2;
         private System.Windows.Forms.Panel DragonRosa1;
         private System.Windows.Forms.Panel Calabozo1;
-        private System.Windows.Forms.Panel Calabozo3;
-        private System.Windows.Forms.Panel Calabozo2;
         private System.Windows.Forms.Panel CaballeroAzul;
         private System.Windows.Forms.Panel CaballeroRosa;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Panel Calabozo2;
+        private System.Windows.Forms.Panel Calabozo3;
     }
 }
 

@@ -2465,6 +2465,12 @@
         veQvx3oslM5zKrI3XWqQcTujeb12sjtAcn0swJjknne9753vfff73wEfeMEPnvCFl3sQAAA7
 </value>
   </data>
+  <data name="pBdado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>970, 455</value>
+  </data>
+  <data name="dado.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1066, 477</value>
+  </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA1QAAAIMCAYAAADyy+1zAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -16246,8 +16252,12 @@
         RK5CYII=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>996, 203</value>
+    <value>996, 202</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>198, 87</value>
@@ -18959,6 +18969,9 @@
         xADFlb6rUtBrg/2DFFfo3/240svRi8HePmNcpdeu0vcH6X0O/txgP/17gL4ngu9D9xRxFf299BwKOQEp
         CU6AXI4SaKeKjB9vhv8FvDyg7l6vyZ8AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>1263, 695</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
