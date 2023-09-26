@@ -27,7 +27,7 @@ namespace CalabozosYDragones_lab
 
         public int Mover()
         {
-            Numero = Movilizar.Next(1,6);
+            Numero = Movilizar.Next(1,7);
             return Numero;
         }
 

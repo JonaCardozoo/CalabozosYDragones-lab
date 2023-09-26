@@ -349,7 +349,7 @@ namespace CalabozosYDragones_lab
                         {
                             CaballeroRosa.Left = 15 + 300;
                             CaballeroRosa.Top = 5 + 300;
-                            MessageBox.Show("GANO EL CABALLERO ROJO");
+                            MessageBox.Show("GANO EL CABALLERO ROSA");
                             columnaRosado = 0;
                             filaRosado = 0;
                             posicionA = 0;
@@ -429,5 +429,9 @@ namespace CalabozosYDragones_lab
             }
         }
 
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
