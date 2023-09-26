@@ -40,6 +40,8 @@ Dragon Azul
 
 
 ![image](https://github.com/JonaCardozoo/CalabozosYDragones-lab/assets/102664372/176a0fcf-6043-4a4e-9e58-f63635b25655)
+
+
 Dragon Verde
 
 
