@@ -16,6 +16,7 @@ namespace CalabozosYDragones_lab
         {
             InitializeComponent();
         }
+        int contador = 0;
         public PantallaCarga(int segundos)
         {
             InitializeComponent();
@@ -49,13 +50,25 @@ namespace CalabozosYDragones_lab
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            progressBar1.Increment(7);
-            if (progressBar1.Value == progressBar1.Maximum)
+
+            if(contador < 100)
             {
-                timer2.Stop();
-                this.Hide();
-                
+                contador++;
+                BarraDeCarga.Increment(contador);
             }
+            else
+            {
+                timer1.Stop();
+            }
+
+            //progressBar1.Increment(10);
+            //if (progressBar1.Value == progressBar1.Maximum)
+            //{
+            //    timer2.Stop();
+            //    this.Hide();
+                
+            //}
+
         }
     }
 }

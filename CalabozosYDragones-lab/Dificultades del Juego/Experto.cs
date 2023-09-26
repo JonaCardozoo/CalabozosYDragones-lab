@@ -5,20 +5,21 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CalabozosYDragones_lab
 {
-    internal class Experto
+
+    internal class Experto : Intermedio
     {
-        
-
-        static Random random = new Random();
-        int posicion = random.Next(0, 59);
-
-        public Experto()
+        Calabozo[] calabozos = new Calabozo[3];
+        public Experto(Panel posicion, int cantidad) : base(posicion, cantidad)
         {
-            Calabozo calbozo = new Calabozo(posicion);
+            for (int i = 0; i < cantidad; i++)
+            {
+                calabozos[i] = new Calabozo(posicion);
+            }
         }
-      
     }
 }
+

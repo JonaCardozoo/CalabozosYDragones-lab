@@ -12,6 +12,7 @@ using CalabozosYDragones_lab.Clases;
 using System.ComponentModel.Design;
 using System.Runtime.Remoting.Messaging;
 
+
 namespace CalabozosYDragones_lab
 {
     public partial class Form1 : Form
@@ -24,7 +25,8 @@ namespace CalabozosYDragones_lab
         Caballero caballero =  new Caballero(Hola);
         Dragones dragones = new Dragones(Hola);
         Dragones dragones2 = new Dragones(Hola);
-
+        Experto experto;
+        Calabozo calabozo = new Calabozo(Hola);
 
         Pieza pieza;
         int a = 0;
@@ -102,8 +104,8 @@ namespace CalabozosYDragones_lab
             DragonVerde2.Visible=false;
             CaballeroRosa.Visible = true;
 
-            //PantallaCarga pantallaCarga = new PantallaCarga(6);
-            //pantallaCarga.ShowDialog();
+            PantallaCarga pantallaCarga = new PantallaCarga(3);
+            pantallaCarga.ShowDialog();
         }
 
         private void dragoncito_Tick(object sender, EventArgs e)
@@ -129,7 +131,7 @@ namespace CalabozosYDragones_lab
         {
 
         }
-
+        int cont = 0;
         private void button1_Click_1(object sender, EventArgs e)
         {
             //intermedio = new Intermedio(dragones.Posicion, Convert.ToInt32(numericUpDown1.Value));
@@ -202,6 +204,20 @@ namespace CalabozosYDragones_lab
 
 
             }
+
+            if (comboBox1.SelectedIndex == 2 && cont == 0)
+            {
+
+
+                calabozo.PosicionCala(Calabozo1);
+                calabozo.PosicionCala(Calabozo2);
+                calabozo.PosicionCala(Calabozo3);
+                Calabozo2.Visible = true;
+                Calabozo1.Visible = true;
+                Calabozo3.Visible = true;
+
+            }
+            cont = 1;
 
             if (turno == 0)
             {
@@ -316,6 +332,12 @@ namespace CalabozosYDragones_lab
                 DragonAzul2.Visible = true;
 
              }
+            if (comboBox1.SelectedIndex == 2)
+            {
+                calabozo.PosicionInicialCala(Calabozo1);
+                calabozo.PosicionInicialCala(Calabozo2);
+                calabozo.PosicionInicialCala(Calabozo3);
+            }
 
             else
             {

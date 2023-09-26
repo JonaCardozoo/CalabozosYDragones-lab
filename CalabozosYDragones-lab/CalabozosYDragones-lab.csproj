@@ -99,6 +99,12 @@
     <Compile Include="WinnerVerde.Designer.cs">
       <DependentUpon>WinnerVerde.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.bs-Cyrl.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.es-AR.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
