@@ -12,6 +12,7 @@ using CalabozosYDragones_lab.Clases;
 using System.ComponentModel.Design;
 using System.Runtime.Remoting.Messaging;
 
+
 namespace CalabozosYDragones_lab
 {
     public partial class Form1 : Form
@@ -102,8 +103,8 @@ namespace CalabozosYDragones_lab
             DragonVerde2.Visible=false;
             CaballeroRosa.Visible = true;
 
-            //PantallaCarga pantallaCarga = new PantallaCarga(6);
-            //pantallaCarga.ShowDialog();
+            PantallaCarga pantallaCarga = new PantallaCarga(3);
+            pantallaCarga.ShowDialog();
         }
 
         private void dragoncito_Tick(object sender, EventArgs e)
