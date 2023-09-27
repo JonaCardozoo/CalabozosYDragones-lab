@@ -11,26 +11,39 @@ namespace CalabozosYDragones_lab.Clases
     internal class Calabozo
     {
     
-        public Panel Cala { get; set; }
+        public int Cala { get; set; }
         Random random = new Random();
-        public void PosicionCala(Panel Calabozo)
+
+        public Calabozo(int posicion)
         {
-            int pos = random.Next(1, 49);
-            Calabozo.Left = 55 + ((pos % 10) * 90);
-            Calabozo.Top = 70 + ((pos / 10) * 90);
-            pos = random.Next(1, 49);
-            Calabozo.Left = 47 + ((pos % 10) * 90);
-            Calabozo.Top = 55 + ((pos / 10) * 90);
+            Cala = posicion;
         }
+
+
+        public int PosicionEstaticaCalabozo()
+        {
+            int ObtenerNumero = random.Next(1, 49);
+            return ObtenerNumero;
+        }
+
+
+        //public void PosicionCala(Panel Calabozo)
+        //{
+        //    int pos = random.Next(1, 49);
+        //    Calabozo.Left = 55 + ((pos % 10) * 90);
+        //    Calabozo.Top = 70 + ((pos / 10) * 90);
+        //    pos = random.Next(1, 49);
+
+        //    Calabozo.Left = 47 + ((pos % 10) * 90);
+        //    Calabozo.Top = 55 + ((pos / 10) * 90);
+        //}
+
         public void PosicionInicialCala(Panel Calabozo)
         {
             Calabozo.Left = 35;
             Calabozo.Top = 50;
         }
-        public Calabozo(Panel posicion)
-        {
-            Cala = posicion;
-        }
+        
 
     }
 }

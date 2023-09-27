@@ -20,16 +20,9 @@ namespace CalabozosYDragones_lab
         static Panel Hola { get; set; }
         Jugador jugadorHumano;
         Intermedio intermedio;
-        Caballero caballero = new Caballero(Hola);
-        Dragones dragones = new Dragones(Hola);
-        Calabozo calabozo = new Calabozo(Hola);
-
-
-        
-
-          
-
-
+        Caballero caballero = new Caballero(1);
+        Dragones dragones = new Dragones(1);
+        Calabozo calabozo = new Calabozo(1);
         int columnaRosado = 0;
         int filaRosado = 0;
         int columnaAmarillo = 0;
@@ -39,13 +32,16 @@ namespace CalabozosYDragones_lab
         int columnaVerde = 0;
         int filaVerde = 0;
         int cont = 0;
-
         int posicionA = 0;
         int posicionB = 0;
         int posicionC = 0;
         int posicionD = 0;
         int jugador = 0;
         int turno = 0;
+        int posicionCalabozo1 = 0;
+        int posicionCalabozo2 = 0;
+        int posicionCalabozo3 = 0;
+        int numero = 0;
 
 
         public Form1()
@@ -159,6 +155,8 @@ namespace CalabozosYDragones_lab
                     #region DragoRosa1
                     int DragonHumano = 0;
                     DragonHumano = dragones.MoverDragon();
+
+                    
                     dragones.ColumnaDragonRosa1 = (DragonHumano % 10) * 90;
                     dragones.FilaDragonRosa1 = (DragonHumano / 10) * 90;
 
@@ -197,77 +195,55 @@ namespace CalabozosYDragones_lab
 
                 }
 
-                    
 
-                    
-                    if (comboBox1.SelectedIndex == 2 && cont == 0)
+                if (turno == 0)
+                {
+                    dado.Visible = false;
+                    jugador = 1;
+                    pBdado.Visible = true;
+                    TimerDado.Stop();
+                    TimerDado.Start();
+                    posicionA += caballero.Mover();
+
+                    columnaRosado = (posicionA % 10) * 90;
+                    filaRosado = (posicionA / 10) * 90;
+                    dado.Text = caballero.Numero.ToString();
+                    listBox1.Items.Add("El Caballero Rosado se movió: " + caballero.Numero);
+
+                    if (posicionA == posicionCalabozo1 || posicionA == posicionCalabozo2 || posicionA == posicionCalabozo3)
                     {
-                        
-                        calabozo.PosicionCala(Calabozo1);
-                        calabozo.PosicionCala(Calabozo2);
-                        calabozo.PosicionCala(Calabozo3);
-                        Calabozo2.Visible = true;
-                        Calabozo1.Visible = true;
-                        Calabozo3.Visible = true;
-
+                        MessageBox.Show("El Caballero Rosado llegó a un calabozo");
+                        turno = 1; 
+                        numero = 1; 
                     }
-                    cont = 1;
-                    
-                    if (turno == 0)
+                    else
                     {
-                        
-                        dado.Visible = false;
-                        jugador = 1;
-                        pBdado.Visible = true;
-                        TimerDado.Stop();
-                        TimerDado.Start();
-                        posicionA += caballero.Mover();
-                        if(posicionA == calabozo.PosicionCala())
-                        columnaRosado = (posicionA % 10) * 90;
-                        filaRosado = (posicionA / 10) * 90;
-                        dado.Text = caballero.Numero.ToString();
-                        listBox1.Items.Add("El Caballero Rosado se movio: " + caballero.Numero);
-                        
-                        turno = 1;
+                        turno = 1; 
                     }
-                    else if (turno == 1)
+                }
+                else if (turno == 1)
+                {
+                    dado.Visible = false;
+                    jugador = 2;
+                    pBdado.Visible = true;
+                    TimerDado.Stop();
+                    TimerDado.Start();
+                    posicionB += caballero.Mover();
+                    columnaAzul = (posicionB % 10) * 90;
+                    filaAzul = (posicionB / 10) * 90;
+                    dado.Text = caballero.Numero.ToString();
+                    listBox1.Items.Add("El Caballero Azul se movió: " + caballero.Numero);
+
+                    if (numero > 0)
                     {
-
-                        dado.Visible = false;
-                        jugador = 2;
-                        pBdado.Visible = true;
-                        TimerDado.Stop();
-                        TimerDado.Start();
-                        posicionB += caballero.Mover();
-                        columnaAzul = (posicionB % 10) * 90;
-                        filaAzul = (posicionB / 10) * 90;
-                        dado.Text = caballero.Numero.ToString();
-                        listBox1.Items.Add("El Caballero Azul se movio: " + caballero.Numero);
-                        if (numeros >= 2)
-                            turno = 2;
-                        else
-                            turno = 0;
+                        numero--;
                     }
-                    else if (turno == 2)
+                    else
                     {
-                        dado.Visible = false;
-                        jugador = 3;
-                        pBdado.Visible = true;
-                        TimerDado.Stop();
-                        TimerDado.Start();
-                        posicionC += caballero.Mover();
-                        columnaAmarillo = (posicionC % 10) * 90;
-                        filaAmarillo = (posicionC / 10) * 90;
-                        dado.Text = caballero.Numero.ToString();
-                        listBox1.Items.Add("El Caballero Amarillo se movio: " + caballero.Numero);
-
-                        if (numeros >= 3)
-                            turno = 3;
-
-                        else
-                            turno = 0;
+                        turno = 0;
                     }
-                    else if (turno == 3)
+                }
+                else if (turno == 3)
                     {
                         dado.Visible = false;
                         jugador = 4;
@@ -282,7 +258,36 @@ namespace CalabozosYDragones_lab
 
                         turno = 0;
                     }
-                
+                if (comboBox1.SelectedIndex == 2 && cont == 0)
+                {
+
+                    posicionCalabozo1 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo1.Left = 55 + ((posicionCalabozo1 % 10) * 90);
+                    Calabozo1.Top = 70 + ((posicionCalabozo1 / 10) * 90);
+
+
+
+                    posicionCalabozo2 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo2.Left = 55 + ((posicionCalabozo2 % 10) * 90);
+                    Calabozo2.Top = 70 + ((posicionCalabozo2 / 10) * 90);
+
+
+
+
+
+                    posicionCalabozo3 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo3.Left = 55 + ((posicionCalabozo3 % 10) * 90);
+                    Calabozo3.Top = 70 + ((posicionCalabozo3 / 10) * 90);
+
+                    
+
+                    Calabozo1.Visible = true;
+                    Calabozo2.Visible = true;
+                    Calabozo3.Visible = true;
+
+                }
+                cont = 1;
+
             }
             else
                 MessageBox.Show("ERROR, ELIJA MODALIDAD DE JUEGO", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -310,10 +315,7 @@ namespace CalabozosYDragones_lab
 
                 if (comboBox1.SelectedIndex == 1)
                 {
-                    dragones = new Dragones(DragonRosa1);
-                    dragones = new Dragones(DragonRosa2);
-                    dragones = new Dragones(DragonAzul1);
-                    dragones = new Dragones(DragonAzul2);
+                    
                     dragones.PosicionInicialDragones(DragonRosa1);
                     dragones.PosicionInicialDragones(DragonRosa2);
                     dragones.PosicionInicialDragones(DragonAzul1);
@@ -337,9 +339,11 @@ namespace CalabozosYDragones_lab
                 }
                 else if (comboBox1.SelectedIndex == 2)
                 {
+
                     calabozo.PosicionInicialCala(Calabozo1);
                     calabozo.PosicionInicialCala(Calabozo2);
                     calabozo.PosicionInicialCala(Calabozo3);
+
                 }
 
             else
@@ -355,7 +359,7 @@ namespace CalabozosYDragones_lab
             }
 
         }
-
+            
             private void dadoA_VisibleChanged(object sender, EventArgs e)
             {
                 switch (jugador)
@@ -544,13 +548,13 @@ namespace CalabozosYDragones_lab
 
                         if (comboBox1.SelectedIndex == 2 && cont == 0)
                         {
-
-                            calabozo.PosicionCala(Calabozo1);
-                            calabozo.PosicionCala(Calabozo2);
-                            calabozo.PosicionCala(Calabozo3);
-                            Calabozo2.Visible = true;
-                            Calabozo1.Visible = true;
-                            Calabozo3.Visible = true;
+                            
+                            //calabozo.PosicionCala(Calabozo1);
+                            //calabozo.PosicionCala(Calabozo2);
+                            //calabozo.PosicionCala(Calabozo3);
+                            //Calabozo2.Visible = true;
+                            //Calabozo1.Visible = true;
+                            //Calabozo3.Visible = true;
 
                         }
                         cont = 1;

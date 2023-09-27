@@ -11,7 +11,7 @@ namespace CalabozosYDragones_lab
     internal class Caballero:Pieza 
     {
         
-        public Caballero(Panel posicion): base(posicion)
+        public Caballero(int posicion): base(posicion)
         {
             Posicion = posicion;
         }
@@ -27,7 +27,7 @@ namespace CalabozosYDragones_lab
 
         public int Mover()
         {
-            Numero = Movilizar.Next(1,7);
+            Numero = Movilizar.Next(1,1);
             return Numero;
         }
 

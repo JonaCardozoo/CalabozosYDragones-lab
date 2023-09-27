@@ -11,9 +11,9 @@ namespace CalabozosYDragones_lab
     internal class Pieza
     {
 
-        public Panel Posicion { get; protected set; }
+        public int Posicion { get; protected set; }
 
-        public Pieza(Panel posicion)
+        public Pieza(int posicion)
         {
             Posicion = posicion;      
         }

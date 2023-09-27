@@ -14,7 +14,7 @@ namespace CalabozosYDragones_lab.Clases
         int contador = 0;
         
 
-        public Intermedio(Panel posicion, int cantidadJugadores) : base(posicion,cantidadJugadores)
+        public Intermedio(int posicion, int cantidadJugadores) : base(posicion,cantidadJugadores)
         {
             int cantDragones = cantidadJugadores * 2;
             for (int i = 0; i < cantDragones; i++)

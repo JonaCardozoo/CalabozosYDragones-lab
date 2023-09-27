@@ -332,15 +332,15 @@
         private System.Windows.Forms.Panel CaballeroVerde;
         private System.Windows.Forms.Panel DragonRosa2;
         private System.Windows.Forms.Panel DragonRosa1;
-        private System.Windows.Forms.Panel Calabozo1;
         private System.Windows.Forms.Panel CaballeroAzul;
         private System.Windows.Forms.Panel CaballeroRosa;
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Panel Calabozo2;
-        private System.Windows.Forms.Panel Calabozo3;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Panel Calabozo1;
+        public System.Windows.Forms.Panel Calabozo2;
+        public System.Windows.Forms.Panel Calabozo3;
     }
 }
 

@@ -29,11 +29,8 @@ namespace CalabozosYDragones_lab
         public int FilaDragonVerde2 { get; set; }
         public int ColumnaDragonVerde2 { get; set; }
 
-
-
-
         static Random moverDragones = new Random();
-        public Dragones(Panel posicion): base(posicion) 
+        public Dragones(int posicion): base(posicion) 
         { 
            base.Posicion = posicion;
            
