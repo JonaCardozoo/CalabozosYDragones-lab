@@ -16,5 +16,24 @@ namespace CalabozosYDragones_lab
         {
             InitializeComponent();
         }
+
+        public WinnerAmarillo(int seg)
+        {
+            InitializeComponent();
+
+            TimerSplash.Interval = seg * 1000;
+            TimerSplash.Start();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TimerSplash_Tick(object sender, EventArgs e)
+        {
+            TimerSplash.Stop();
+            this.Close();
+        }
     }
 }

@@ -58,6 +58,9 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.Calabozo2 = new System.Windows.Forms.Panel();
             this.Calabozo3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBdado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -238,20 +241,47 @@
             resources.ApplyResources(this.Calabozo3, "Calabozo3");
             this.Calabozo3.Name = "Calabozo3";
             // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.Name = "label3";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.Name = "textBox1";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button2.FlatAppearance.BorderSize = 1200;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.button2, "button2");
+            this.button2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.button2.Name = "button2";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Controls.Add(this.Calabozo3);
-            this.Controls.Add(this.Calabozo2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.DragonVerde2);
             this.Controls.Add(this.DragonVerde1);
             this.Controls.Add(this.DragonAzul2);
             this.Controls.Add(this.DragonAzul1);
             this.Controls.Add(this.DragonAmarillo2);
             this.Controls.Add(this.DragonAmarillo1);
+            this.Controls.Add(this.Calabozo3);
+            this.Controls.Add(this.Calabozo2);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.CaballeroAmarillo);
             this.Controls.Add(this.CaballeroVerde);
             this.Controls.Add(this.DragonRosa2);
@@ -308,6 +338,9 @@
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Panel Calabozo2;
         private System.Windows.Forms.Panel Calabozo3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

@@ -13,12 +13,14 @@ namespace CalabozosYDragones_lab
     internal class Experto : Intermedio
     {
         Calabozo[] calabozos = new Calabozo[3];
+
         public Experto(Panel posicion, int cantidad) : base(posicion, cantidad)
         {
             for (int i = 0; i < cantidad; i++)
             {
                 calabozos[i] = new Calabozo(posicion);
             }
+
         }
     }
 }

@@ -13,8 +13,6 @@ namespace CalabozosYDragones_lab
     internal class Sistema
     {
         
-
-        Random LugarRandom = new Random();
         string[] jugador = new string[1];
         int contador = 0;
         string Nombre { get; set; }
@@ -29,10 +27,7 @@ namespace CalabozosYDragones_lab
 
         }
 
-        public void AgregarJugador(string nombre)
-        {
-            jugador[contador++] = nombre;   
-        }
+        
 
         public override string ToString()
         {

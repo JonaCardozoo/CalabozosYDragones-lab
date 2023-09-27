@@ -16,5 +16,18 @@ namespace CalabozosYDragones_lab
         {
             InitializeComponent();
         }
+
+        public WinnerAzul(int seg)
+        {
+            InitializeComponent();
+
+            TimerSplash.Interval = seg*1000;
+            TimerSplash.Start();
+        }
+        private void TimerSplash_Tick(object sender, EventArgs e)
+        {
+            TimerSplash.Stop();
+            this.Close();
+        }
     }
 }

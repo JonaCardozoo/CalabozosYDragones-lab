@@ -16,5 +16,23 @@ namespace CalabozosYDragones_lab
         {
             InitializeComponent();
         }
+        public WinnerRosa(int seg)
+        {
+            InitializeComponent();
+
+            TimerSpash.Interval = seg*1000;
+            TimerSpash.Start();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+            
+        private void TimerSpash_Tick(object sender, EventArgs e)
+        {
+            TimerSpash.Stop();
+            this.Close();
+        }
     }
 }

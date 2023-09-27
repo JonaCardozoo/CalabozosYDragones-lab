@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WinnerRosa));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.NombreGanador = new System.Windows.Forms.Label();
+            this.TimerSpash = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,6 +45,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // NombreGanador
             // 
@@ -55,6 +58,10 @@
             this.NombreGanador.Size = new System.Drawing.Size(0, 108);
             this.NombreGanador.TabIndex = 1;
             // 
+            // TimerSpash
+            // 
+            this.TimerSpash.Tick += new System.EventHandler(this.TimerSpash_Tick);
+            // 
             // WinnerRosa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -62,6 +69,7 @@
             this.ClientSize = new System.Drawing.Size(1263, 658);
             this.Controls.Add(this.NombreGanador);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WinnerRosa";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "WinnerRosa";
@@ -75,5 +83,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label NombreGanador;
+        private System.Windows.Forms.Timer TimerSpash;
     }
 }

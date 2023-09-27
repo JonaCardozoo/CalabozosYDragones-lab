@@ -7707,4 +7707,7 @@
         rQF+Z77+67/+H0AILNgwaNEwXMIlXMIlXEKwKcKXJHbm63/m63/LKTvTMz1xZ77+Z77+63/yBwQAOw==
 </value>
   </data>
+  <metadata name="TimerSplash.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>
