@@ -52,6 +52,12 @@
     <Compile Include="Clases\Dragones.cs" />
     <Compile Include="Dificultades del Juego\Intermedio.cs" />
     <Compile Include="Dificultades del Juego\Experto.cs" />
+    <Compile Include="FHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FHistorial.Designer.cs">
+      <DependentUpon>FHistorial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
     <Compile Include="WinnerVerde.Designer.cs">
       <DependentUpon>WinnerVerde.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FHistorial.resx">
+      <DependentUpon>FHistorial.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.bs-Cyrl.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

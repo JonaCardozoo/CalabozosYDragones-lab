@@ -32,22 +32,39 @@ namespace CalabozosYDragones_lab
         static Random moverDragones = new Random();
         public Dragones(int posicion): base(posicion) 
         { 
-           base.Posicion = posicion;
-           
+           base.Posicion = posicion;          
         }
 
         public void PosicionInicialDragones(Panel dragonH1)
         {
             dragonH1.Left = 35;
             dragonH1.Top = 50;
+
         }
 
+        public override void Jugar(Panel Caballeros, Panel C)
+        {
+            throw new NotImplementedException();
+        }
+        public override int MoverPieza()
+        {
+            throw new NotImplementedException();
+        }
+    
         public int MoverDragon()
         {
-
-
             Numero = moverDragones.Next(1,49);
             return Numero;
+        }
+
+        public void MoverDragones(Panel DragonRosa1,Panel DragonRosa2)
+        {
+
+            DragonRosa1.Left = 55 + ColumnaDragonRosa1;
+            DragonRosa1.Top = 65 + FilaDragonRosa1;
+            DragonRosa2.Left = 55 + ColumnaDragonRosa2;
+            DragonRosa2.Top = 65 + FilaDragonRosa2;
+
         }
 
     }

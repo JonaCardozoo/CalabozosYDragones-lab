@@ -61,6 +61,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnHistorialPartidas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pBdado)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -265,11 +266,20 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // btnHistorialPartidas
+            // 
+            resources.ApplyResources(this.btnHistorialPartidas, "btnHistorialPartidas");
+            this.btnHistorialPartidas.Name = "btnHistorialPartidas";
+            this.btnHistorialPartidas.UseVisualStyleBackColor = true;
+            this.btnHistorialPartidas.Click += new System.EventHandler(this.btnHistorialPartidas_Click);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.Controls.Add(this.CaballeroAzul);
+            this.Controls.Add(this.btnHistorialPartidas);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
@@ -287,7 +297,6 @@
             this.Controls.Add(this.DragonRosa2);
             this.Controls.Add(this.DragonRosa1);
             this.Controls.Add(this.Calabozo1);
-            this.Controls.Add(this.CaballeroAzul);
             this.Controls.Add(this.CaballeroRosa);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
@@ -299,6 +308,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pBdado)).EndInit();
@@ -341,6 +351,7 @@
         public System.Windows.Forms.Panel Calabozo1;
         public System.Windows.Forms.Panel Calabozo2;
         public System.Windows.Forms.Panel Calabozo3;
+        private System.Windows.Forms.Button btnHistorialPartidas;
     }
 }
 

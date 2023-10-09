@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,17 +11,31 @@ namespace CalabozosYDragones_lab
     internal class Basico
     {
 
-        Random dado = new Random();
-        Caballero caballero;
         public int Posicion { get; set; }
         int cantidadJugadores = 0;
+
+        
+        public int Numero { get; set; }
+
         public Basico(int posicion,int cantidadJugadores)
         {
+
             Posicion = posicion;
             this.cantidadJugadores = cantidadJugadores;
-            caballero = new Caballero(posicion);
              
         }
+
+        public bool VerficarGanador()
+        {
+            return false;
+        }
+
+
+        //public int Mover()
+        //{
+            
+
+        //}
 
     }
 }

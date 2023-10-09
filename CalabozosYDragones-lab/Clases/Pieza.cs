@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace CalabozosYDragones_lab
 {
-    internal class Pieza
+    abstract class Pieza
     {
 
         public int Posicion { get; protected set; }
@@ -17,6 +17,11 @@ namespace CalabozosYDragones_lab
         {
             Posicion = posicion;      
         }
+
+        public abstract int MoverPieza();
+
+        public abstract void Jugar(Panel Caballeros,Panel caballerows);
+        
 
     }
 }

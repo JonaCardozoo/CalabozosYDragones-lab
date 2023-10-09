@@ -13,22 +13,15 @@ namespace CalabozosYDragones_lab.Clases
         Dragones[] dragones = new Dragones[8];  
         int contador = 0;
         
-
         public Intermedio(int posicion, int cantidadJugadores) : base(posicion,cantidadJugadores)
         {
-            int cantDragones = cantidadJugadores * 2;
-            for (int i = 0; i < cantDragones; i++)
-            {
-                dragones[i] = new Dragones(posicion);
-            }
+            //int cantDragones = cantidadJugadores * 2;
+            //for (int i = 0; i < cantDragones; i++)
+            //{
+            //    dragones[i] = new Dragones(posicion);
+            //}
 
         }
-
-        public void CrearDragon(Dragones nuevoDragon)
-        {
-            dragones[contador++] = nuevoDragon;
-        }
-
 
     }
 }

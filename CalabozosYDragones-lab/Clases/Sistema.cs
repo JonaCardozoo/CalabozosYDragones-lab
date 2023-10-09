@@ -27,8 +27,6 @@ namespace CalabozosYDragones_lab
 
         }
 
-        
-
         public override string ToString()
         {
             return jugador.ToString();
