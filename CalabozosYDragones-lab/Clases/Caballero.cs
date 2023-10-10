@@ -14,10 +14,13 @@ namespace CalabozosYDragones_lab
 
         static int PosicionRosado = 0;
         static int PosicionAzul = 0;
+        static int PosicionAmarillo = 0;
+        static int PosicionVerde = 0;
+        
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
         public int Numero {  get; set; }
-
+        public bool hayGanador = false;
         public int ColumnaRosado = 0;
         public int FilaRosado = 0;
         public int ColumnaAzul = 0;
@@ -25,10 +28,15 @@ namespace CalabozosYDragones_lab
 
         Basico basico;
         Panel caballeroRosa = new Panel();
+        Panel caballeroAmarillo = new Panel();
+        Panel caballeroAzul = new Panel();
+        Panel caballeroVerde = new Panel();
         public Caballero(int posicion): base(posicion)
         {
             Posicion = posicion;
         }
+
+        
 
         public void PosicionInicialCaballero(Panel caballeros)
         {
@@ -43,15 +51,11 @@ namespace CalabozosYDragones_lab
             return Numero;
         }
 
-        public bool HayGanador()
+       
+
+        public override void Jugar(Panel Caballeros)
         {
-            return true;
-
-        }
-
-        public override void Jugar(Panel Caballeros,Panel caballero)
-        {
-
+            basico = new Basico(1,3);
             switch (TurnoCaballero)
             {
                 case 1:
@@ -61,17 +65,54 @@ namespace CalabozosYDragones_lab
                     FilaRosado = (PosicionRosado / 10) * 90;
                     Caballeros.Left = 55 + ColumnaRosado;
                     Caballeros.Top = 65 + FilaRosado;
+
+                    {
+
+                    }
                     break;
                 case 2:
                     PosicionAzul += MoverPieza();
                     ColumnaAzul = (PosicionAzul % 10) * 90;
                     FilaAzul = (PosicionAzul / 10) * 90;
-                    caballero.Left = 55 + ColumnaAzul;
-                    caballero.Top = 65 + FilaAzul;
+                    Caballeros.Left = 55 + ColumnaAzul;
+                    Caballeros.Top = 65 + FilaAzul;
                     break;
-
             }
             
+
+        }
+
+        public bool VerficarGanador()
+        {
+            
+            if (PosicionRosado >= 49)
+            {
+                hayGanador = true;
+                
+            }
+
+            else if (PosicionAzul >= 49)
+            {
+                hayGanador = true;
+                
+            }
+
+            else if (PosicionAmarillo >= 49)
+            {
+                hayGanador = true;
+                PosicionAmarillo = 0;
+                PosicionInicialCaballero(caballeroAmarillo);
+            }
+
+            else if(PosicionVerde>=49)
+            {
+                hayGanador = true;
+                PosicionVerde = 0;
+                PosicionInicialCaballero(caballeroVerde);
+            }
+
+            return hayGanador;
+
 
         }
 

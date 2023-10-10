@@ -20,7 +20,7 @@ namespace CalabozosYDragones_lab
 
         public abstract int MoverPieza();
 
-        public abstract void Jugar(Panel Caballeros,Panel caballerows);
+        public abstract void Jugar(Panel Caballeros);
         
 
     }

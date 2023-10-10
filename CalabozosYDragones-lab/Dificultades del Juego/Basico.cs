@@ -13,7 +13,6 @@ namespace CalabozosYDragones_lab
 
         public int Posicion { get; set; }
         int cantidadJugadores = 0;
-
         
         public int Numero { get; set; }
 
@@ -25,17 +24,8 @@ namespace CalabozosYDragones_lab
              
         }
 
-        public bool VerficarGanador()
-        {
-            return false;
-        }
 
 
-        //public int Mover()
-        //{
-            
-
-        //}
 
     }
 }

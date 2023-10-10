@@ -29,6 +29,7 @@ namespace CalabozosYDragones_lab
         public int FilaDragonVerde2 { get; set; }
         public int ColumnaDragonVerde2 { get; set; }
 
+
         static Random moverDragones = new Random();
         public Dragones(int posicion): base(posicion) 
         { 
@@ -42,7 +43,7 @@ namespace CalabozosYDragones_lab
 
         }
 
-        public override void Jugar(Panel Caballeros, Panel C)
+        public override void Jugar(Panel Caballeros)
         {
             throw new NotImplementedException();
         }

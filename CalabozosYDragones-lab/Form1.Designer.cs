@@ -36,8 +36,6 @@
             this.dado = new System.Windows.Forms.Label();
             this.dadoR = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dragoncito = new System.Windows.Forms.Timer(this.components);
-            this.dragoncito2 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -108,10 +106,6 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
-            // 
-            // dragoncito
-            // 
-            this.dragoncito.Tick += new System.EventHandler(this.dragoncito_Tick);
             // 
             // label1
             // 
@@ -326,8 +320,6 @@
         private System.Windows.Forms.Label dado;
         private System.Windows.Forms.Label dadoR;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Timer dragoncito;
-        private System.Windows.Forms.Timer dragoncito2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
