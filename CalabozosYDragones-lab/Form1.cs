@@ -21,7 +21,6 @@ namespace CalabozosYDragones_lab
         FHistorial Historial = new FHistorial();
         Intermedio intermedio;
         Caballero caballero;
-        Caballero caballero2;
         Dragones dragones;
         Pieza p;
         Calabozo calabozo;
@@ -33,17 +32,9 @@ namespace CalabozosYDragones_lab
         bool turnoCaballeroAmarillo = false;
         bool turnoCaballeroVerde = false;
 
-        int turno = 0;
-        int posicionA = 0;
-        int posicionB = 0;
-        int posicionC = 0;
-        int posicionD = 0;
-        int jugador = 0;
-        
         public Form1()
         {
             InitializeComponent();
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -77,6 +68,7 @@ namespace CalabozosYDragones_lab
             caballero = new Caballero(1);
             caballero.PosicionInicialCaballero(CaballeroRosa);
             caballero.PosicionInicialCaballero(CaballeroAzul);
+            caballero.PosicionInicialCaballero(CaballeroAmarillo);
 
             //PantallaCarga pantallaCarga = new PantallaCarga(3);
             //pantallaCarga.ShowDialog();
@@ -84,9 +76,11 @@ namespace CalabozosYDragones_lab
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            List<Panel> caballeros = new List<Panel>
+                        {CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
+
             int CantidadJugadores = Convert.ToInt32(numericUpDown1.Value);
             caballero = new Caballero(1);
-            caballero2 = new Caballero(1);
             jugadorHumano = new Jugador(textBox1.Text);
             basico = new Basico(1,CantidadJugadores);
             intermedio = new Intermedio(1,CantidadJugadores);
@@ -124,10 +118,13 @@ namespace CalabozosYDragones_lab
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
+
                     caballero.VerficarGanador();
-                    if (caballero.hayGanador == true)
+                    if (caballero.hayGanador)
                     {
-                        caballero.PosicionInicialCaballero(CaballeroRosa);
+                        foreach (Panel caballeroColor in caballeros)
+
+                            caballero.PosicionInicialCaballero(caballeroColor);
                         WinnerRosa winnerR = new WinnerRosa(4);
                         winnerR.ShowDialog();
                     }
@@ -143,47 +140,60 @@ namespace CalabozosYDragones_lab
 
                     dado.Visible = false;
                     pBdado.Visible = true;
-                    caballero2.TurnoCaballero = 2;
-                    caballero2.Jugar(CaballeroAzul);
+                    caballero.TurnoCaballero = 2;
+                    caballero.Jugar(CaballeroAzul);
                     TimerDado.Stop();
                     TimerDado.Start();
-                    dado.Text = caballero2.Numero.ToString();
+                    dado.Text = caballero.Numero.ToString();
                     caballero.VerficarGanador();
-                    if (caballero.hayGanador == true)
+
+                    if (caballero.hayGanador)
                     {
-                        caballero.PosicionInicialCaballero(CaballeroAzul);
+                        foreach (Panel caballeroColor in caballeros)
+                                caballero.PosicionInicialCaballero(caballeroColor);
+
                         WinnerAzul winnerA = new WinnerAzul(4);
                         winnerA.ShowDialog();
+
                     }
-                    listBox1.Items.Add("El Caballero Azul se movio: " + caballero2.Numero + " Lugares");
+                        listBox1.Items.Add("El Caballero Azul se movio: " + caballero.Numero + " Lugares");
 
                     if (CantidadJugadores >= 2)
                     {
                         turnoCaballeroAmarillo = true;
                         turnoCaballeroAzul = false;
-                        
+
                     }
                     else
-                        turnoCaballeroRosado = true; 
+                        turnoCaballeroRosado = true;
                 }
 
                 else if (turnoCaballeroAmarillo)
                 {
-                    //dado.Visible = false;
-                    //jugador = 3;
-                    //pBdado.Visible = true;
-                    //TimerDado.Stop();
-                    //TimerDado.Start();
-                    //posicionC += basico.Mover();
-                    //columnaAmarillo = (posicionC % 10) * 90;
-                    //filaAmarillo = (posicionC / 10) * 90;
-                    //dado.Text = basico.Numero.ToString();
-                    //listBox1.Items.Add("El Caballero Amarillo se movio: " + basico.Numero);
+                    dado.Visible = false;
+                    pBdado.Visible = true;
+                    caballero.TurnoCaballero = 3;
+                    caballero.Jugar(CaballeroAmarillo);
+                    TimerDado.Stop();
+                    TimerDado.Start();
+                    dado.Text = caballero.Numero.ToString();
+                    caballero.VerficarGanador();
+
+                    if (caballero.hayGanador)
+                    {
+                        foreach (Panel caballeroColor in caballeros)
+                                 caballero.PosicionInicialCaballero(caballeroColor);
+
+                        WinnerAmarillo winnerAM = new WinnerAmarillo(4);
+                        winnerAM.ShowDialog();
+
+                    }
+                        listBox1.Items.Add("El Caballero Amarillo se movio: " + caballero.Numero + " Lugares");
 
                     if (CantidadJugadores >= 3)
                     {
-                        turnoCaballeroAmarillo = false;
                         turnoCaballeroVerde = true;
+                        turnoCaballeroAmarillo = false;
                     }
 
                     else
@@ -191,18 +201,29 @@ namespace CalabozosYDragones_lab
                 }
                 else if (turnoCaballeroVerde)
                 {
-                    //dado.Visible = false;
-                    //jugador = 4;
-                    //pBdado.Visible = true;
-                    //TimerDado.Stop();
-                    //TimerDado.Start();
-                    //posicionD += basico.Mover();
-                    //columnaVerde = (posicionD % 10) * 90;
-                    //filaVerde = (posicionD / 10) * 90;
-                    //dado.Text = basico.Numero.ToString();
-                    //listBox1.Items.Add("El Caballero Verde se movio: " + basico.Numero);
+                    dado.Visible = false;
+                    pBdado.Visible = true;
+                    caballero.TurnoCaballero = 4;
+                    caballero.Jugar(CaballeroVerde);
+                    TimerDado.Stop();
+                    TimerDado.Start();
+                    dado.Text = caballero.Numero.ToString();
+                    caballero.VerficarGanador();
 
-                    turnoCaballeroRosado = true;
+                    if (caballero.hayGanador)
+                    {
+                        
+                        foreach (Panel caballeroColor in caballeros)
+                                caballero.PosicionInicialCaballero(caballeroColor);
+
+
+                        WinnerVerde winnerV = new WinnerVerde(4);
+                        winnerV.ShowDialog();
+
+                        listBox1.Items.Add("El Caballero Verde se movio: " + caballero.Numero + " Lugares");
+
+                        turnoCaballeroRosado = true;
+                    }
                 }
                 
                 if (comboBox1.SelectedIndex == 2)
@@ -280,7 +301,6 @@ namespace CalabozosYDragones_lab
             Historial.ShowDialog();
         }
 
-        
     }
 
     }

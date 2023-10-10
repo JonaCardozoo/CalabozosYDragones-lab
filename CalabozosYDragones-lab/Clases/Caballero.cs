@@ -25,18 +25,17 @@ namespace CalabozosYDragones_lab
         public int FilaRosado = 0;
         public int ColumnaAzul = 0;
         public int FilaAzul = 0;
+        public int ColumnaAmarillo = 0;
+        public int FilaAmarillo = 0;
+        public int ColumnaVerde = 0;
+        public int FilaVerde = 0;
 
         Basico basico;
         Panel caballeroRosa = new Panel();
-        Panel caballeroAmarillo = new Panel();
-        Panel caballeroAzul = new Panel();
-        Panel caballeroVerde = new Panel();
         public Caballero(int posicion): base(posicion)
         {
             Posicion = posicion;
         }
-
-        
 
         public void PosicionInicialCaballero(Panel caballeros)
         {
@@ -51,8 +50,6 @@ namespace CalabozosYDragones_lab
             return Numero;
         }
 
-       
-
         public override void Jugar(Panel Caballeros)
         {
             basico = new Basico(1,3);
@@ -66,9 +63,6 @@ namespace CalabozosYDragones_lab
                     Caballeros.Left = 55 + ColumnaRosado;
                     Caballeros.Top = 65 + FilaRosado;
 
-                    {
-
-                    }
                     break;
                 case 2:
                     PosicionAzul += MoverPieza();
@@ -77,8 +71,30 @@ namespace CalabozosYDragones_lab
                     Caballeros.Left = 55 + ColumnaAzul;
                     Caballeros.Top = 65 + FilaAzul;
                     break;
+
+                case 3:
+
+                    PosicionAmarillo += MoverPieza();
+                    ColumnaAmarillo = (PosicionAmarillo % 10) * 90;
+                    FilaAmarillo = (PosicionAmarillo / 10) * 90;
+                    Caballeros.Left = 55 + ColumnaAmarillo;
+                    Caballeros.Top = 65 + FilaAmarillo;
+
+                    break;
+
+                case 4:
+
+                    PosicionVerde += MoverPieza();
+                    ColumnaVerde = (PosicionVerde % 10) * 90;
+                    FilaVerde = (PosicionVerde / 10) * 90;
+                    Caballeros.Left = 55 + ColumnaVerde;
+                    Caballeros.Top = 65 + FilaVerde;
+
+                    break;
+
+
+
             }
-            
 
         }
 
@@ -88,12 +104,16 @@ namespace CalabozosYDragones_lab
             if (PosicionRosado >= 49)
             {
                 hayGanador = true;
+                PosicionRosado = 0;
+                PosicionAzul = 0;
                 
             }
 
             else if (PosicionAzul >= 49)
             {
                 hayGanador = true;
+                PosicionAzul = 0;
+                PosicionRosado = 0;
                 
             }
 
@@ -101,14 +121,19 @@ namespace CalabozosYDragones_lab
             {
                 hayGanador = true;
                 PosicionAmarillo = 0;
-                PosicionInicialCaballero(caballeroAmarillo);
+                PosicionAzul = 0;
+                PosicionRosado = 0;
+
             }
 
             else if(PosicionVerde>=49)
             {
                 hayGanador = true;
                 PosicionVerde = 0;
-                PosicionInicialCaballero(caballeroVerde);
+                PosicionAzul = 0;
+                PosicionRosado = 0;
+                PosicionAmarillo = 0;
+                
             }
 
             return hayGanador;
