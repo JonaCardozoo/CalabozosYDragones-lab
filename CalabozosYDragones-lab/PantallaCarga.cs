@@ -50,16 +50,24 @@ namespace CalabozosYDragones_lab
 
         private void timer2_Tick(object sender, EventArgs e)
         {
+            //BarraDeCarga.Value += 10;
+            //contador+= 10;
+            //label1.Text = contador + "%";
 
-            if(contador < 100)
-            {
-                contador++;
-                BarraDeCarga.Increment(contador);
-            }
-            else
-            {
-                timer1.Stop();
-            }
+            //if(BarraDeCarga.Value == 100)
+            //{
+            //    timer1.Stop();
+            //}
+            //if(contador < 100)
+            //{
+            //    contador++;
+            //    label1.Text = contador++.ToString();
+            //    BarraDeCarga.Increment(contador);
+            //}
+            //else
+            //{
+            //    timer1.Stop();
+            //}
 
             //progressBar1.Increment(10);
             //if (progressBar1.Value == progressBar1.Maximum)

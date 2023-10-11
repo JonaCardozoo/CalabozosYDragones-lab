@@ -15,11 +15,18 @@ namespace CalabozosYDragones_lab.Clases
         
         public Intermedio(int posicion, int cantidadJugadores) : base(posicion,cantidadJugadores)
         {
-            //int cantDragones = cantidadJugadores * 2;
-            //for (int i = 0; i < cantDragones; i++)
-            //{
-            //    dragones[i] = new Dragones(posicion);
-            //}
+            int cantDragones = cantidadJugadores * 2;
+            for (int i = 0; i < cantDragones; i++)
+            {
+                dragones[i] = new Dragones(posicion);
+            }
+
+        }
+
+        public void PosicionInicialDragones(Panel dragon1, Panel Dragon2)
+        {
+            dragon1.Left = 35;
+            Dragon2.Top = 50;
 
         }
 

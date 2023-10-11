@@ -12,23 +12,9 @@ namespace CalabozosYDragones_lab
     {
         
         public int Numero {get; set; }
-        public int FilaDragonRosa1 { get; set; }
-        public int ColumnaDragonRosa1 { get; set; }
-        public int FilaDragonRosa2 { get; set; }
-        public int ColumnaDragonRosa2 { get; set; }
-        public int FilaDragonAzul1 { get; set; }
-        public int ColumnaDragonAzul1 { get; set; }
-        public int FilaDragonAzul2 { get; set; }
-        public int ColumnaDragonAzul2 { get; set; }
-        public int FilaDragonAmarillo1 { get; set; }
-        public int ColumnaDragonAmarillo1 { get; set; }
-        public int FilaDragonAmarillo2 { get; set; }
-        public int ColumnaDragonAmarillo2 { get; set; }
-        public int FilaDragonVerde1 { get; set; }
-        public int ColumnaDragonVerde1 { get; set; }
-        public int FilaDragonVerde2 { get; set; }
-        public int ColumnaDragonVerde2 { get; set; }
+        
 
+        public int OpcionDragones { get; set; }
 
         static Random moverDragones = new Random();
         public Dragones(int posicion): base(posicion) 
@@ -36,37 +22,81 @@ namespace CalabozosYDragones_lab
            base.Posicion = posicion;          
         }
 
-        public void PosicionInicialDragones(Panel dragonH1)
-        {
-            dragonH1.Left = 35;
-            dragonH1.Top = 50;
+        
 
+        public override void Jugar(Panel Dragon1, Panel Dragon2)
+        {
+
+            switch (OpcionDragones)
+            {
+                case 1:
+
+                    PosicionDragonRosa1 = MoverDragon();
+                    ColumnaDragonRosa1 = (PosicionDragonRosa1 % 10) * 90;
+                    FilaDragonRosa1 = (PosicionDragonRosa1 / 10) * 90;
+                    Dragon1.Left = 55 + ColumnaDragonRosa1;
+                    Dragon1.Top = 65 + FilaDragonRosa1;
+
+                    PosicionDragonRosa2 = MoverDragon();
+                    ColumnaDragonRosa2 = (PosicionDragonRosa2 % 10) * 90;
+                    FilaDragonRosa2 = (PosicionDragonRosa2 / 10) * 90;
+                    Dragon2.Left = 55 + ColumnaDragonRosa2;
+                    Dragon2.Top = 65 + FilaDragonRosa2;
+
+                    break;
+                case 2:
+
+                    PosicionDragonAzul1 = MoverDragon();
+                    ColumnaDragonAzul1 = (PosicionDragonAzul1 % 10) * 90;
+                    FilaDragonAzul1 = (PosicionDragonAzul1 / 10) * 90;
+                    Dragon1.Left = 55 + ColumnaDragonAzul1;
+                    Dragon1.Top = 65 + FilaDragonAzul1;
+
+                    PosicionDragonAzul2 = MoverDragon();
+                    ColumnaDragonAzul2 = (PosicionDragonAzul2 % 10) * 90;
+                    FilaDragonAzul2 = (PosicionDragonAzul2 / 10) * 90;
+                    Dragon2.Left = 55 + ColumnaDragonAzul2;
+                    Dragon2.Top = 65 + FilaDragonAzul2;
+
+
+                    break;
+
+                //case 3:
+
+                //    PosicionAmarillo += MoverDragon();
+                //    ColumnaAmarillo = (PosicionAmarillo % 10) * 90;
+                //    FilaAmarillo = (PosicionAmarillo / 10) * 90;
+                //    Caballeros.Left = 55 + ColumnaAmarillo;
+                //    Caballeros.Top = 65 + FilaAmarillo;
+
+                //    break;
+
+                //case 4:
+
+                //    PosicionVerde += MoverDragon();
+                //    ColumnaVerde = (PosicionVerde % 10) * 90;
+                //    FilaVerde = (PosicionVerde / 10) * 90;
+                //    Caballeros.Left = 55 + ColumnaVerde;
+                //    Caballeros.Top = 65 + FilaVerde;
+
+                //    break;
+
+            }
         }
 
-        public override void Jugar(Panel Caballeros)
-        {
-            throw new NotImplementedException();
-        }
         public override int MoverPieza()
         {
-            throw new NotImplementedException();
+            return 1;
         }
-    
+        
         public int MoverDragon()
         {
             Numero = moverDragones.Next(1,49);
             return Numero;
-        }
-
-        public void MoverDragones(Panel DragonRosa1,Panel DragonRosa2)
-        {
-
-            DragonRosa1.Left = 55 + ColumnaDragonRosa1;
-            DragonRosa1.Top = 65 + FilaDragonRosa1;
-            DragonRosa2.Left = 55 + ColumnaDragonRosa2;
-            DragonRosa2.Top = 65 + FilaDragonRosa2;
 
         }
+
+        
 
     }
 }

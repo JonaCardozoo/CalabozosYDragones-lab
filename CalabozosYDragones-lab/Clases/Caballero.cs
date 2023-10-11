@@ -12,23 +12,13 @@ namespace CalabozosYDragones_lab
     internal class Caballero:Pieza 
     {
 
-        static int PosicionRosado = 0;
-        static int PosicionAzul = 0;
-        static int PosicionAmarillo = 0;
-        static int PosicionVerde = 0;
         
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
+
         public int Numero {  get; set; }
         public bool hayGanador = false;
-        public int ColumnaRosado = 0;
-        public int FilaRosado = 0;
-        public int ColumnaAzul = 0;
-        public int FilaAzul = 0;
-        public int ColumnaAmarillo = 0;
-        public int FilaAmarillo = 0;
-        public int ColumnaVerde = 0;
-        public int FilaVerde = 0;
+        
 
         Basico basico;
         Panel caballeroRosa = new Panel();
@@ -37,31 +27,37 @@ namespace CalabozosYDragones_lab
             Posicion = posicion;
         }
 
-        public void PosicionInicialCaballero(Panel caballeros)
-        {
-            caballeros.Left = 35;
-            caballeros.Top = 50;
-
-        }
-
+        
         public override int MoverPieza()
         {
             Numero = Movilizar.Next(1, 7);
             return Numero;
         }
 
-        public override void Jugar(Panel Caballeros)
+        public override void Jugar(Panel Caballeros,Panel caballeros)
         {
             basico = new Basico(1,3);
             switch (TurnoCaballero)
             {
                 case 1:
-
+                    
                     PosicionRosado += MoverPieza();
                     ColumnaRosado = (PosicionRosado % 10) * 90;
                     FilaRosado = (PosicionRosado / 10) * 90;
                     Caballeros.Left = 55 + ColumnaRosado;
                     Caballeros.Top = 65 + FilaRosado;
+
+
+                    //*VERIFICA LA POSICION*//
+
+                    //bool MismoLugar = false;
+
+                    //if(PosicionRosado == PosicionDragonRosa1)
+                    //{
+                    //    MismoLugar = true;
+                    //    PosicionRosado += 5;
+
+                    //}
 
                     break;
                 case 2:
@@ -91,8 +87,6 @@ namespace CalabozosYDragones_lab
                     Caballeros.Top = 65 + FilaVerde;
 
                     break;
-
-
 
             }
 

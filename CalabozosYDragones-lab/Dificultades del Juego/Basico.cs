@@ -13,15 +13,31 @@ namespace CalabozosYDragones_lab
 
         public int Posicion { get; set; }
         int cantidadJugadores = 0;
-        
+        Caballero caballero;
         public int Numero { get; set; }
-
+        Caballero[] caballeros = new Caballero[4];
         public Basico(int posicion,int cantidadJugadores)
         {
-
+            caballero = new Caballero(posicion);
             Posicion = posicion;
             this.cantidadJugadores = cantidadJugadores;
+
+            for (int i = 0; i < caballeros.Length; i++)
+            {
+                if (caballeros != null)
+                {
+                    caballeros[i] = caballero;
+                }
+                
+            }
              
+        }
+
+        public void PosicionInicialCaballero(Panel caballeros)
+        {
+            caballeros.Left = 35;
+            caballeros.Top = 50;
+
         }
 
 

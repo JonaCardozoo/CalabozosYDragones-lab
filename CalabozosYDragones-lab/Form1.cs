@@ -64,36 +64,56 @@ namespace CalabozosYDragones_lab
             DragonVerde2.Visible = false;
             CaballeroRosa.Visible = true;
             #endregion
+            basico = new Basico(1,2);
+            intermedio = new Intermedio(1,2);   
+            basico.PosicionInicialCaballero(CaballeroRosa);
+            basico.PosicionInicialCaballero(CaballeroAzul);
+            basico.PosicionInicialCaballero(CaballeroAmarillo);
+            basico.PosicionInicialCaballero(CaballeroVerde);
 
-            caballero = new Caballero(1);
-            caballero.PosicionInicialCaballero(CaballeroRosa);
-            caballero.PosicionInicialCaballero(CaballeroAzul);
-            caballero.PosicionInicialCaballero(CaballeroAmarillo);
+            intermedio.PosicionInicialDragones(DragonRosa1,DragonRosa2);
+            intermedio.PosicionInicialDragones(DragonAzul1, DragonAzul2);
+            intermedio.PosicionInicialDragones(DragonVerde1, DragonVerde2);
+            intermedio.PosicionInicialDragones(DragonAmarillo1, DragonAmarillo2);
+            
 
-            //PantallaCarga pantallaCarga = new PantallaCarga(3);
+
+            dragones = new Dragones(1);
+
+            //PantallaCarga pantallaCarga = new PantallaCarga(6);
             //pantallaCarga.ShowDialog();
+
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            List<Panel> caballeros = new List<Panel>
-                        {CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
-
+            List<Panel> caballeros = new List<Panel> { CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
+            List<Panel> dragoness = new List<Panel> { DragonRosa1, DragonRosa2, DragonAzul1, DragonAzul2, DragonAmarillo1, DragonAmarillo2, DragonVerde1, DragonVerde2 };
             int CantidadJugadores = Convert.ToInt32(numericUpDown1.Value);
             caballero = new Caballero(1);
             jugadorHumano = new Jugador(textBox1.Text);
             basico = new Basico(1,CantidadJugadores);
             intermedio = new Intermedio(1,CantidadJugadores);
             experto = new Experto(1,CantidadJugadores);
-
+            dragones = new Dragones(1);
             if (comboBox1.SelectedItem != null)
             {
+                if(comboBox1.SelectedIndex == 1)
+                {
+                    DragonRosa1.Visible = true;
+                    DragonRosa2.Visible = true;
+                }
                 numericUpDown1.Enabled = false;
                 comboBox1.Enabled = false;
-
+               
                 if (CantidadJugadores == 1)
                 {
                     CaballeroAzul.Visible = true;
+                    if (comboBox1.SelectedIndex == 1)
+                    {
+                        DragonAzul1.Visible = true;
+                        DragonAzul2.Visible = true;
+                    }
 
                 }
                 else if (CantidadJugadores == 2)
@@ -110,21 +130,26 @@ namespace CalabozosYDragones_lab
 
                 if (turnoCaballeroRosado)
                 {
+                    if (comboBox1.SelectedIndex == 1)
+                    {
+                        dragones.OpcionDragones = 1;
+                        dragones.Jugar(DragonRosa1, DragonRosa2);
+                    }
 
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 1;
-                    caballero.Jugar(CaballeroRosa);
+                    caballero.Jugar(CaballeroRosa, CaballeroRosa);
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
+
 
                     caballero.VerficarGanador();
                     if (caballero.hayGanador)
                     {
                         foreach (Panel caballeroColor in caballeros)
-
-                            caballero.PosicionInicialCaballero(caballeroColor);
+                                basico.PosicionInicialCaballero(caballeroColor);
                         WinnerRosa winnerR = new WinnerRosa(4);
                         winnerR.ShowDialog();
                     }
@@ -137,20 +162,26 @@ namespace CalabozosYDragones_lab
 
                 else if (turnoCaballeroAzul)
                 {
+                    if (comboBox1.SelectedIndex == 1)
+                    {
+                        dragones.OpcionDragones = 2;
+                        dragones.Jugar(DragonAzul1, DragonAzul2);
+                    }
 
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 2;
-                    caballero.Jugar(CaballeroAzul);
+                    caballero.Jugar(CaballeroAzul,CaballeroAzul);
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
                     caballero.VerficarGanador();
 
+                    
                     if (caballero.hayGanador)
                     {
                         foreach (Panel caballeroColor in caballeros)
-                                caballero.PosicionInicialCaballero(caballeroColor);
+                                basico.PosicionInicialCaballero(caballeroColor);
 
                         WinnerAzul winnerA = new WinnerAzul(4);
                         winnerA.ShowDialog();
@@ -173,7 +204,7 @@ namespace CalabozosYDragones_lab
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 3;
-                    caballero.Jugar(CaballeroAmarillo);
+                    caballero.Jugar(CaballeroAmarillo, CaballeroAmarillo);
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
@@ -182,7 +213,7 @@ namespace CalabozosYDragones_lab
                     if (caballero.hayGanador)
                     {
                         foreach (Panel caballeroColor in caballeros)
-                                 caballero.PosicionInicialCaballero(caballeroColor);
+                                 basico.PosicionInicialCaballero(caballeroColor);
 
                         WinnerAmarillo winnerAM = new WinnerAmarillo(4);
                         winnerAM.ShowDialog();
@@ -204,7 +235,7 @@ namespace CalabozosYDragones_lab
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 4;
-                    caballero.Jugar(CaballeroVerde);
+                    caballero.Jugar(CaballeroVerde, CaballeroVerde);
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
@@ -214,7 +245,7 @@ namespace CalabozosYDragones_lab
                     {
                         
                         foreach (Panel caballeroColor in caballeros)
-                                caballero.PosicionInicialCaballero(caballeroColor);
+                                basico.PosicionInicialCaballero(caballeroColor);
 
 
                         WinnerVerde winnerV = new WinnerVerde(4);
@@ -253,7 +284,6 @@ namespace CalabozosYDragones_lab
 
                     }
                 
-
             }
             else
                 MessageBox.Show("ERROR, ELIJA MODALIDAD DE JUEGO", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -289,7 +319,6 @@ namespace CalabozosYDragones_lab
 
         }
         #endregion
-
 
         private void button2_Click(object sender, EventArgs e)
         {
