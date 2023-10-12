@@ -20,24 +20,20 @@ namespace CalabozosYDragones_lab.Clases
         }
 
 
-        public int PosicionEstaticaCalabozo()
+        public int PosLeft()
         {
-            int ObtenerNumero = random.Next(1, 49);
-            return ObtenerNumero;
+            int ran = random.Next(1, 49);
+            int left = 55 + ((ran % 10) * 90);
+            return left;
+        }
+        public int PosTop()
+        {
+            int ran = random.Next(1, 49);
+            int top = 70 + ((ran / 10) * 90);
+            return top;
         }
 
-
-        //public void PosicionCala(Panel Calabozo)
-        //{
-        //    int pos = random.Next(1, 49);
-        //    Calabozo.Left = 55 + ((pos % 10) * 90);
-        //    Calabozo.Top = 70 + ((pos / 10) * 90);
-        //    pos = random.Next(1, 49);
-
-        //    Calabozo.Left = 47 + ((pos % 10) * 90);
-        //    Calabozo.Top = 55 + ((pos / 10) * 90);
-        //}
-
+       
         public void PosicionInicialCala(Panel Calabozo)
         {
             Calabozo.Left = 35;

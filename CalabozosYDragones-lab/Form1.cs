@@ -260,24 +260,13 @@ namespace CalabozosYDragones_lab
                 if (comboBox1.SelectedIndex == 2 && band==0)
                     {
                     calabozo = new Calabozo(1);
-                    int posicionCalabozo1 = calabozo.PosicionEstaticaCalabozo();
-                    Calabozo1.Left = 55 + ((posicionCalabozo1 % 10) * 90);
-                    Calabozo1.Top = 70 + ((posicionCalabozo1 / 10) * 90);
 
-
-
-                    int posicionCalabozo2 = calabozo.PosicionEstaticaCalabozo();
-                    Calabozo2.Left = 55 + ((posicionCalabozo2 % 10) * 90);
-                    Calabozo2.Top = 70 + ((posicionCalabozo2 / 10) * 90);
-
-
-
-                    int posicionCalabozo3 = calabozo.PosicionEstaticaCalabozo();
-                    Calabozo3.Left = 55 + ((posicionCalabozo3 % 10) * 90);
-                    Calabozo3.Top = 70 + ((posicionCalabozo3 / 10) * 90);
-
-
-
+                    Calabozo1.Left = calabozo.PosLeft();
+                    Calabozo1.Top = calabozo.PosTop();
+                    Calabozo2.Left =calabozo.PosLeft();
+                    Calabozo2.Top = calabozo.PosTop();
+                    Calabozo3.Left = calabozo.PosLeft();
+                    Calabozo3.Top = calabozo.PosTop();
                     Calabozo1.Visible = true;
                     Calabozo2.Visible = true;
                     Calabozo3.Visible = true;
