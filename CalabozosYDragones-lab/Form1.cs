@@ -26,7 +26,7 @@ namespace CalabozosYDragones_lab
         Calabozo calabozo;
         Basico basico;
         Experto experto;
-
+        int band = 0;
         bool turnoCaballeroRosado = true;
         bool turnoCaballeroAzul = false;
         bool turnoCaballeroAmarillo = false;
@@ -257,37 +257,37 @@ namespace CalabozosYDragones_lab
                     }
                 }
                 
-                if (comboBox1.SelectedIndex == 2)
+                if (comboBox1.SelectedIndex == 2 && band==0)
                     {
-
-                    //posicionCalabozo1 = calabozo.PosicionEstaticaCalabozo();
-                    //Calabozo1.Left = 55 + ((posicionCalabozo1 % 10) * 90);
-                    //Calabozo1.Top = 70 + ((posicionCalabozo1 / 10) * 90);
-
-
-
-                    //posicionCalabozo2 = calabozo.PosicionEstaticaCalabozo();
-                    //Calabozo2.Left = 55 + ((posicionCalabozo2 % 10) * 90);
-                    //Calabozo2.Top = 70 + ((posicionCalabozo2 / 10) * 90);
+                    calabozo = new Calabozo(1);
+                    int posicionCalabozo1 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo1.Left = 55 + ((posicionCalabozo1 % 10) * 90);
+                    Calabozo1.Top = 70 + ((posicionCalabozo1 / 10) * 90);
 
 
 
-                    //posicionCalabozo3 = calabozo.PosicionEstaticaCalabozo();
-                    //Calabozo3.Left = 55 + ((posicionCalabozo3 % 10) * 90);
-                    //Calabozo3.Top = 70 + ((posicionCalabozo3 / 10) * 90);
+                    int posicionCalabozo2 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo2.Left = 55 + ((posicionCalabozo2 % 10) * 90);
+                    Calabozo2.Top = 70 + ((posicionCalabozo2 / 10) * 90);
 
-                    
 
-                    //Calabozo1.Visible = true;
-                    //Calabozo2.Visible = true;
-                    //Calabozo3.Visible = true;
 
-                    }
+                    int posicionCalabozo3 = calabozo.PosicionEstaticaCalabozo();
+                    Calabozo3.Left = 55 + ((posicionCalabozo3 % 10) * 90);
+                    Calabozo3.Top = 70 + ((posicionCalabozo3 / 10) * 90);
+
+
+
+                    Calabozo1.Visible = true;
+                    Calabozo2.Visible = true;
+                    Calabozo3.Visible = true;
+
+                }
                 
             }
             else
                 MessageBox.Show("ERROR, ELIJA MODALIDAD DE JUEGO", "ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+            band = 1;
         }
 
         #region Metodos Vacios
