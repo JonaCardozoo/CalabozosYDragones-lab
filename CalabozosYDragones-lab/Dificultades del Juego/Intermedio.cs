@@ -10,7 +10,7 @@ namespace CalabozosYDragones_lab.Clases
     internal class Intermedio:Basico
     {
 
-        Dragones[] dragones = new Dragones[8];  
+        protected Dragones[] dragones = new Dragones[8];  
         int contador = 0;
         
         public Intermedio(int posicion, int cantidadJugadores) : base(posicion,cantidadJugadores)
@@ -22,7 +22,19 @@ namespace CalabozosYDragones_lab.Clases
             }
 
         }
+        public override void Jugar()
+        {
+            base.Jugar();
+            foreach (Dragones dragon in dragones)
+            {
+                foreach (Caballero a in caballeros)
+                {
 
+                    dragon.MoverPieza();
+                    
+                }
+            }
+        }
         public void PosicionInicialDragones(Panel dragon1, Panel Dragon2)
         {
             dragon1.Left = 35;

@@ -15,7 +15,7 @@ namespace CalabozosYDragones_lab
         int cantidadJugadores = 0;
         Caballero caballero;
         public int Numero { get; set; }
-        Caballero[] caballeros = new Caballero[4];
+        protected Caballero[] caballeros = new Caballero[4];
         public Basico(int posicion,int cantidadJugadores)
         {
             caballero = new Caballero(posicion);
@@ -31,6 +31,18 @@ namespace CalabozosYDragones_lab
                 
             }
              
+        }
+        virtual public void Jugar() 
+
+        {
+            foreach (Caballero jug in caballeros)
+            {
+                if (jug.Turno < 1)
+                {
+                    jug.MoverPieza();
+                }
+                
+            }
         }
 
         public void PosicionInicialCaballero(Panel caballeros)

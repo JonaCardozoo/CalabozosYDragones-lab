@@ -270,7 +270,7 @@ namespace CalabozosYDragones_lab
                     Calabozo1.Visible = true;
                     Calabozo2.Visible = true;
                     Calabozo3.Visible = true;
-
+                    experto.Jugar();
                 }
                 
             }

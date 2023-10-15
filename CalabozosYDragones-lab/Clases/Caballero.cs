@@ -15,7 +15,7 @@ namespace CalabozosYDragones_lab
         
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
-
+        public int Turno = 0;
         public int Numero {  get; set; }
         public bool hayGanador = false;
         
