@@ -32,18 +32,6 @@ namespace CalabozosYDragones_lab
             }
              
         }
-        virtual public void Jugar() 
-
-        {
-            foreach (Caballero jug in caballeros)
-            {
-                if (jug.Turno < 1)
-                {
-                    jug.MoverPieza();
-                }
-                
-            }
-        }
 
         public void PosicionInicialCaballero(Panel caballeros)
         {
@@ -51,9 +39,6 @@ namespace CalabozosYDragones_lab
             caballeros.Top = 50;
 
         }
-
-
-
 
     }
 }

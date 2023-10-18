@@ -21,42 +21,7 @@ namespace CalabozosYDragones_lab
                 calabozos[i] = new Calabozo(posicion);
             }
         }
-        override public void Jugar()
-        {
-            base.Jugar();
-            for (int i = 0; i < caballeros.Length; i++)
-            {
-                Caballero jug = (Caballero)caballeros[i];
-
-                if (jug.Turno <= 0)
-                {
-                    for (int n = 0; n < calabozos.Length && jug.Turno <= 0; n++)
-                    {
-                        foreach (Dragones drag in dragones)
-                        {
-                            Calabozo aux = (Calabozo)calabozos[n];
-                            if (aux.Cala == jug.Posicion)
-                            {
-                                jug.Turno = 1;
-                                if (jug.Posicion == drag.Posicion)
-                                {
-                                    jug.Turno = 0;
-                                }
-                                else if (jug.Posicion== drag.Posicion)
-                                {
-                                    //caballeros.Remove(jug);
-                                }
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    jug.Turno--;
-                }
-
-            }
-        }
+        
     }
 }
 

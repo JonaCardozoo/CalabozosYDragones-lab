@@ -13,6 +13,7 @@ namespace CalabozosYDragones_lab
 
         public int Posicion { get; protected set; }
 
+        #region Variables
         protected static int PosicionRosado = 0;
         protected static int PosicionAzul = 0;
         protected static int PosicionAmarillo = 0;
@@ -53,7 +54,7 @@ namespace CalabozosYDragones_lab
         protected int ColumnaDragonVerde1 = 0;
         protected int FilaDragonVerde2 = 0;
         protected int ColumnaDragonVerde2 = 0;
-
+        #endregion
 
         public Pieza(int posicion)
         {
@@ -61,8 +62,6 @@ namespace CalabozosYDragones_lab
         }
 
         public abstract int MoverPieza();
-
-        //public abstract int JugarDragon();    
         public abstract void Jugar(Panel Piezas,Panel piezas);
         
 

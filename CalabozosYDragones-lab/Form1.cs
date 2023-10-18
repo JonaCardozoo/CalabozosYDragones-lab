@@ -65,6 +65,7 @@ namespace CalabozosYDragones_lab
             CaballeroRosa.Visible = true;
             #endregion
             basico = new Basico(1,2);
+            dragones = new Dragones(1);
             intermedio = new Intermedio(1,2);   
             basico.PosicionInicialCaballero(CaballeroRosa);
             basico.PosicionInicialCaballero(CaballeroAzul);
@@ -76,10 +77,6 @@ namespace CalabozosYDragones_lab
             intermedio.PosicionInicialDragones(DragonVerde1, DragonVerde2);
             intermedio.PosicionInicialDragones(DragonAmarillo1, DragonAmarillo2);
             
-
-
-            dragones = new Dragones(1);
-
             //PantallaCarga pantallaCarga = new PantallaCarga(6);
             //pantallaCarga.ShowDialog();
 
@@ -251,16 +248,16 @@ namespace CalabozosYDragones_lab
                         WinnerVerde winnerV = new WinnerVerde(4);
                         winnerV.ShowDialog();
 
-                        listBox1.Items.Add("El Caballero Verde se movio: " + caballero.Numero + " Lugares");
-
-                        turnoCaballeroRosado = true;
                     }
+
+                    listBox1.Items.Add("El Caballero Verde se movio: " + caballero.Numero + " Lugares");
+                    turnoCaballeroRosado = true;
                 }
                 
                 if (comboBox1.SelectedIndex == 2 && band==0)
-                    {
-                    calabozo = new Calabozo(1);
+                {
 
+                    calabozo = new Calabozo(1);
                     Calabozo1.Left = calabozo.PosLeft();
                     Calabozo1.Top = calabozo.PosTop();
                     Calabozo2.Left =calabozo.PosLeft();
@@ -270,7 +267,7 @@ namespace CalabozosYDragones_lab
                     Calabozo1.Visible = true;
                     Calabozo2.Visible = true;
                     Calabozo3.Visible = true;
-                    experto.Jugar();
+
                 }
                 
             }

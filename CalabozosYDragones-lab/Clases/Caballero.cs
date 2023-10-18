@@ -15,7 +15,9 @@ namespace CalabozosYDragones_lab
         
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
+
         public int Turno = 0;
+
         public int Numero {  get; set; }
         public bool hayGanador = false;
         
@@ -47,17 +49,14 @@ namespace CalabozosYDragones_lab
                     Caballeros.Left = 55 + ColumnaRosado;
                     Caballeros.Top = 65 + FilaRosado;
 
+                    bool MismoLugar = false;
 
-                    //*VERIFICA LA POSICION*//
+                    if (PosicionRosado == PosicionDragonRosa1)
+                    {
+                        MismoLugar = true;
+                        PosicionRosado += 5;
 
-                    //bool MismoLugar = false;
-
-                    //if(PosicionRosado == PosicionDragonRosa1)
-                    //{
-                    //    MismoLugar = true;
-                    //    PosicionRosado += 5;
-
-                    //}
+                    }
 
                     break;
                 case 2:
@@ -99,35 +98,40 @@ namespace CalabozosYDragones_lab
             {
                 hayGanador = true;
                 PosicionRosado = 0;
+                PosicionVerde = 0;
                 PosicionAzul = 0;
-                
+                PosicionAmarillo = 0;
+
             }
 
             else if (PosicionAzul >= 49)
             {
                 hayGanador = true;
-                PosicionAzul = 0;
                 PosicionRosado = 0;
-                
+                PosicionVerde = 0;
+                PosicionAzul = 0;
+                PosicionAmarillo = 0;
+
             }
 
             else if (PosicionAmarillo >= 49)
             {
                 hayGanador = true;
-                PosicionAmarillo = 0;
-                PosicionAzul = 0;
                 PosicionRosado = 0;
+                PosicionVerde = 0;
+                PosicionAzul = 0;
+                PosicionAmarillo = 0;
 
             }
 
             else if(PosicionVerde>=49)
             {
                 hayGanador = true;
+                PosicionRosado = 0;
                 PosicionVerde = 0;
                 PosicionAzul = 0;
-                PosicionRosado = 0;
                 PosicionAmarillo = 0;
-                
+
             }
 
             return hayGanador;
