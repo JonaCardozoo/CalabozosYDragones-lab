@@ -87,6 +87,10 @@ namespace CalabozosYDragones_lab
             List<Panel> caballeros = new List<Panel> { CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
             List<Panel> dragoness = new List<Panel> { DragonRosa1, DragonRosa2, DragonAzul1, DragonAzul2, DragonAmarillo1, DragonAmarillo2, DragonVerde1, DragonVerde2 };
             int CantidadJugadores = Convert.ToInt32(numericUpDown1.Value);
+
+            int Dificultad = comboBox1.SelectedIndex;
+            
+
             caballero = new Caballero(1);
             jugadorHumano = new Jugador(textBox1.Text);
             basico = new Basico(1,CantidadJugadores);
@@ -95,7 +99,7 @@ namespace CalabozosYDragones_lab
             dragones = new Dragones(1);
             if (comboBox1.SelectedItem != null)
             {
-                if(comboBox1.SelectedIndex == 1)
+                if(Dificultad == 1)
                 {
                     DragonRosa1.Visible = true;
                     DragonRosa2.Visible = true;
@@ -127,7 +131,7 @@ namespace CalabozosYDragones_lab
 
                 if (turnoCaballeroRosado)
                 {
-                    if (comboBox1.SelectedIndex == 1)
+                    if (Dificultad == 1)
                     {
                         dragones.OpcionDragones = 1;
                         dragones.Jugar(DragonRosa1, DragonRosa2);
@@ -141,7 +145,11 @@ namespace CalabozosYDragones_lab
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
 
-
+                    
+                    if(caballero.MismoLugarRosa == true)
+                    {
+                        MessageBox.Show("Mueve 5 lugares Rosa");
+                    }
                     caballero.VerficarGanador();
                     if (caballero.hayGanador)
                     {
@@ -159,7 +167,7 @@ namespace CalabozosYDragones_lab
 
                 else if (turnoCaballeroAzul)
                 {
-                    if (comboBox1.SelectedIndex == 1)
+                    if (Dificultad == 1)
                     {
                         dragones.OpcionDragones = 2;
                         dragones.Jugar(DragonAzul1, DragonAzul2);
@@ -172,9 +180,17 @@ namespace CalabozosYDragones_lab
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
-                    caballero.VerficarGanador();
 
+                    if(Dificultad == 1)
+                    {
+                        if (caballero.MismoLugarAzul == true)
+                        {
+                            MessageBox.Show("Mueve 5 lugares Azul");
+                        }
+                    }
                     
+
+                    caballero.VerficarGanador();
                     if (caballero.hayGanador)
                     {
                         foreach (Panel caballeroColor in caballeros)
@@ -205,6 +221,15 @@ namespace CalabozosYDragones_lab
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
+
+                    if(Dificultad == 1)
+                    {
+                        if (caballero.MismoLugarAmarillo == true)
+                        {
+                            MessageBox.Show("Mueve 5 lugares Amarillo");
+                        }
+                    }
+                    
                     caballero.VerficarGanador();
 
                     if (caballero.hayGanador)
@@ -236,6 +261,16 @@ namespace CalabozosYDragones_lab
                     TimerDado.Stop();
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
+
+                    if(Dificultad == 1)
+                    {
+                        if (caballero.MismoLugarVerde == true)
+                        {
+                            MessageBox.Show("Mueve 5 lugares Verde");
+                        }
+                    }
+                    
+
                     caballero.VerficarGanador();
 
                     if (caballero.hayGanador)
@@ -254,7 +289,7 @@ namespace CalabozosYDragones_lab
                     turnoCaballeroRosado = true;
                 }
                 
-                if (comboBox1.SelectedIndex == 2 && band==0)
+                if (Dificultad == 2 && band==0)
                 {
 
                     calabozo = new Calabozo(1);
@@ -317,6 +352,5 @@ namespace CalabozosYDragones_lab
         }
 
     }
-
     }
 

@@ -12,7 +12,11 @@ namespace CalabozosYDragones_lab
     internal class Caballero:Pieza 
     {
 
-        
+        public bool MismoLugarRosa = false;
+        public bool MismoLugarAzul = false;
+        public bool MismoLugarAmarillo = false;
+        public bool MismoLugarVerde = false;
+
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
 
@@ -49,11 +53,16 @@ namespace CalabozosYDragones_lab
                     Caballeros.Left = 55 + ColumnaRosado;
                     Caballeros.Top = 65 + FilaRosado;
 
-                    bool MismoLugar = false;
-
                     if (PosicionRosado == PosicionDragonRosa1)
                     {
-                        MismoLugar = true;
+                        MismoLugarRosa = true;
+                        PosicionRosado += 5;
+
+                    }
+
+                    else if (PosicionRosado == PosicionDragonRosa2)
+                    {
+                        MismoLugarRosa = true;
                         PosicionRosado += 5;
 
                     }
@@ -65,6 +74,20 @@ namespace CalabozosYDragones_lab
                     FilaAzul = (PosicionAzul / 10) * 90;
                     Caballeros.Left = 55 + ColumnaAzul;
                     Caballeros.Top = 65 + FilaAzul;
+
+                    if (PosicionAzul == PosicionDragonAzul1)
+                    {
+                        MismoLugarAzul = true;
+                        PosicionAzul += 5;
+
+                    }
+
+                    if (PosicionAzul == PosicionDragonAzul2)
+                    {
+                        MismoLugarAzul = true;
+                        PosicionAzul += 5;
+
+                    }
                     break;
 
                 case 3:
@@ -75,6 +98,20 @@ namespace CalabozosYDragones_lab
                     Caballeros.Left = 55 + ColumnaAmarillo;
                     Caballeros.Top = 65 + FilaAmarillo;
 
+                    if (PosicionAmarillo == PosicionDragonAmarillo1)
+                    {
+                        MismoLugarAmarillo = true;
+                        PosicionAmarillo += 5;
+
+                    }
+
+                    if (PosicionAmarillo== PosicionDragonAmarillo2)
+                    {
+                        MismoLugarAmarillo = true;
+                        PosicionAmarillo += 5;
+
+                    }
+
                     break;
 
                 case 4:
@@ -84,6 +121,20 @@ namespace CalabozosYDragones_lab
                     FilaVerde = (PosicionVerde / 10) * 90;
                     Caballeros.Left = 55 + ColumnaVerde;
                     Caballeros.Top = 65 + FilaVerde;
+
+                    if (PosicionVerde == PosicionDragonVerde1)
+                    {
+                        MismoLugarVerde = true;
+                        PosicionVerde += 5;
+
+                    }
+
+                    if (PosicionVerde == PosicionDragonVerde2)
+                    {
+                        MismoLugarVerde = true;
+                        PosicionVerde += 5;
+
+                    }
 
                     break;
 
