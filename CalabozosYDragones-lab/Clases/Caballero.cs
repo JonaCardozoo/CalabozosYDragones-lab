@@ -12,10 +12,17 @@ namespace CalabozosYDragones_lab
     internal class Caballero:Pieza 
     {
 
-        public bool MismoLugarRosa = false;
-        public bool MismoLugarAzul = false;
-        public bool MismoLugarAmarillo = false;
-        public bool MismoLugarVerde = false;
+        public bool MismoLugarAliadoRosa = false;
+        public bool MismoLugarAliadoAzul = false;
+        public bool MismoLugarAliadoAmarillo = false;
+        public bool MismoLugarAliadoVerde = false;
+
+        public bool MismoLugarEnemigoRosa = false;
+        public bool MismoLugarEnemigoAzul = false;
+        public bool MismoLugarEnemigoAmarillo = false;
+        public bool MismoLugarEnemigoVerde = false;
+
+
 
         public int TurnoCaballero { get; set; }
         static Random Movilizar = new Random();
@@ -55,16 +62,27 @@ namespace CalabozosYDragones_lab
 
                     if (PosicionRosado == PosicionDragonRosa1)
                     {
-                        MismoLugarRosa = true;
+                        MismoLugarAliadoRosa = true;
                         PosicionRosado += 5;
-
                     }
 
                     else if (PosicionRosado == PosicionDragonRosa2)
                     {
-                        MismoLugarRosa = true;
+                        MismoLugarAliadoRosa = true;
                         PosicionRosado += 5;
+                    }
 
+                    else if (PosicionRosado == PosicionDragonAzul1)
+                    {
+                        MismoLugarEnemigoRosa = true;
+                        PosicionRosado -= 5;
+
+                    }
+
+                    else if (PosicionRosado == PosicionDragonAzul2)
+                    {
+                        MismoLugarEnemigoRosa = true;
+                        PosicionRosado -= 5;
                     }
 
                     break;
@@ -77,17 +95,31 @@ namespace CalabozosYDragones_lab
 
                     if (PosicionAzul == PosicionDragonAzul1)
                     {
-                        MismoLugarAzul = true;
+                        MismoLugarAliadoAzul = true;
                         PosicionAzul += 5;
 
                     }
 
                     if (PosicionAzul == PosicionDragonAzul2)
                     {
-                        MismoLugarAzul = true;
+                        MismoLugarAliadoAzul = true;
                         PosicionAzul += 5;
 
                     }
+
+                    else if (PosicionRosado == PosicionDragonRosa1)
+                    {
+                        MismoLugarEnemigoAzul = true;
+                        PosicionAzul -= 5;
+                    }
+                    else if (PosicionRosado == PosicionDragonRosa1)
+                    {
+                        MismoLugarEnemigoAzul = true;
+                        PosicionAzul -= 5;
+
+                    }
+
+
                     break;
 
                 case 3:
@@ -100,14 +132,14 @@ namespace CalabozosYDragones_lab
 
                     if (PosicionAmarillo == PosicionDragonAmarillo1)
                     {
-                        MismoLugarAmarillo = true;
+                        MismoLugarAliadoAmarillo = true;
                         PosicionAmarillo += 5;
 
                     }
 
                     if (PosicionAmarillo== PosicionDragonAmarillo2)
                     {
-                        MismoLugarAmarillo = true;
+                        MismoLugarAliadoAmarillo = true;
                         PosicionAmarillo += 5;
 
                     }
@@ -124,14 +156,14 @@ namespace CalabozosYDragones_lab
 
                     if (PosicionVerde == PosicionDragonVerde1)
                     {
-                        MismoLugarVerde = true;
+                        MismoLugarAliadoVerde = true;
                         PosicionVerde += 5;
 
                     }
 
                     if (PosicionVerde == PosicionDragonVerde2)
                     {
-                        MismoLugarVerde = true;
+                        MismoLugarAliadoVerde = true;
                         PosicionVerde += 5;
 
                     }

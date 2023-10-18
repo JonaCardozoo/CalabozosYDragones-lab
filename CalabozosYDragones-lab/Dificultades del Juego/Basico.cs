@@ -37,7 +37,7 @@ namespace CalabozosYDragones_lab
         {
             caballeros.Left = 35;
             caballeros.Top = 50;
-
+            
         }
 
     }

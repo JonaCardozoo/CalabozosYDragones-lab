@@ -145,11 +145,18 @@ namespace CalabozosYDragones_lab
                     TimerDado.Start();
                     dado.Text = caballero.Numero.ToString();
 
-                    
-                    if(caballero.MismoLugarRosa == true)
+                    if(Dificultad == 1) 
                     {
-                        MessageBox.Show("Mueve 5 lugares Rosa");
+                        if (caballero.MismoLugarAliadoRosa == true)
+                        {
+                            MessageBox.Show("Mueve 5 lugares Rosa");
+                        }
+                        if (caballero.MismoLugarEnemigoRosa == true)
+                        {
+                            MessageBox.Show("Retrocede 5 lugares Rosa");
+                        }
                     }
+                    
                     caballero.VerficarGanador();
                     if (caballero.hayGanador)
                     {
@@ -183,9 +190,14 @@ namespace CalabozosYDragones_lab
 
                     if(Dificultad == 1)
                     {
-                        if (caballero.MismoLugarAzul == true)
+                        if (caballero.MismoLugarAliadoAzul == true)
                         {
                             MessageBox.Show("Mueve 5 lugares Azul");
+                        }
+
+                        if (caballero.MismoLugarEnemigoAzul == true)
+                        {
+                            MessageBox.Show("Retrocede 5 lugares Azul");
                         }
                     }
                     
@@ -224,7 +236,7 @@ namespace CalabozosYDragones_lab
 
                     if(Dificultad == 1)
                     {
-                        if (caballero.MismoLugarAmarillo == true)
+                        if (caballero.MismoLugarAliadoAmarillo == true)
                         {
                             MessageBox.Show("Mueve 5 lugares Amarillo");
                         }
@@ -264,13 +276,12 @@ namespace CalabozosYDragones_lab
 
                     if(Dificultad == 1)
                     {
-                        if (caballero.MismoLugarVerde == true)
+                        if (caballero.MismoLugarAliadoVerde == true)
                         {
                             MessageBox.Show("Mueve 5 lugares Verde");
                         }
                     }
-                    
-
+                   
                     caballero.VerficarGanador();
 
                     if (caballero.hayGanador)
