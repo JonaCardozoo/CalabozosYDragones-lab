@@ -82,15 +82,12 @@ namespace CalabozosYDragones_lab
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnJugar_Click_1(object sender, EventArgs e)
         {
             List<Panel> caballeros = new List<Panel> { CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
             List<Panel> dragoness = new List<Panel> { DragonRosa1, DragonRosa2, DragonAzul1, DragonAzul2, DragonAmarillo1, DragonAmarillo2, DragonVerde1, DragonVerde2 };
             int CantidadJugadores = Convert.ToInt32(numericUpDown1.Value);
-
             int Dificultad = comboBox1.SelectedIndex;
-            
-
             caballero = new Caballero(1);
             jugadorHumano = new Jugador(textBox1.Text);
             basico = new Basico(1,CantidadJugadores);
@@ -99,40 +96,36 @@ namespace CalabozosYDragones_lab
             dragones = new Dragones(1);
             if (comboBox1.SelectedItem != null)
             {
-                if(Dificultad == 1)
-                {
-                    DragonRosa1.Visible = true;
-                    DragonRosa2.Visible = true;
-                }
+                
                 numericUpDown1.Enabled = false;
                 comboBox1.Enabled = false;
                
                 if (CantidadJugadores == 1)
                 {
                     CaballeroAzul.Visible = true;
-                    if (comboBox1.SelectedIndex == 1)
-                    {
-                        DragonAzul1.Visible = true;
-                        DragonAzul2.Visible = true;
-                    }
 
                 }
                 else if (CantidadJugadores == 2)
                 {
                     CaballeroAzul.Visible = true;
                     CaballeroAmarillo.Visible = true;
+
+                    
                 }
                 else if (CantidadJugadores == 3)
                 {
                     CaballeroAzul.Visible = true;
                     CaballeroAmarillo.Visible = true;
                     CaballeroVerde.Visible = true;
+
                 }
 
                 if (turnoCaballeroRosado)
                 {
-                    if (Dificultad == 1)
+                    if (Dificultad == 1 || Dificultad == 2)
                     {
+                        DragonRosa1.Visible = true;
+                        DragonRosa2.Visible = true;
                         dragones.OpcionDragones = 1;
                         dragones.Jugar(DragonRosa1, DragonRosa2);
                     }
@@ -149,11 +142,11 @@ namespace CalabozosYDragones_lab
                     {
                         if (caballero.MismoLugarAliadoRosa == true)
                         {
-                            MessageBox.Show("Mueve 5 lugares Rosa");
+                            listBox1.Items.Add("Aumento 5 lugares el rosa");
                         }
                         if (caballero.MismoLugarEnemigoRosa == true)
                         {
-                            MessageBox.Show("Retrocede 5 lugares Rosa");
+                            listBox1.Items.Add("Retrocede 5 lugares el rosa");
                         }
                     }
                     
@@ -167,6 +160,7 @@ namespace CalabozosYDragones_lab
                     }
 
                     listBox1.Items.Add("El Caballero Rosado se movio: " + caballero.Numero);
+                    listBox1.Items.Add("---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
                     turnoCaballeroAzul = true;
                     turnoCaballeroRosado = false;
 
@@ -174,8 +168,10 @@ namespace CalabozosYDragones_lab
 
                 else if (turnoCaballeroAzul)
                 {
-                    if (Dificultad == 1)
+                    if (Dificultad == 1 || Dificultad == 2)
                     {
+                        DragonAzul1.Visible = true;
+                        DragonAzul2.Visible = true;
                         dragones.OpcionDragones = 2;
                         dragones.Jugar(DragonAzul1, DragonAzul2);
                     }
@@ -192,16 +188,15 @@ namespace CalabozosYDragones_lab
                     {
                         if (caballero.MismoLugarAliadoAzul == true)
                         {
-                            MessageBox.Show("Mueve 5 lugares Azul");
+                            listBox1.Items.Add("Aumento 5 lugares el Azul");
                         }
 
                         if (caballero.MismoLugarEnemigoAzul == true)
                         {
-                            MessageBox.Show("Retrocede 5 lugares Azul");
+                            listBox1.Items.Add("Retrocede 5 lugares el rosa");
                         }
                     }
                     
-
                     caballero.VerficarGanador();
                     if (caballero.hayGanador)
                     {
@@ -213,6 +208,7 @@ namespace CalabozosYDragones_lab
 
                     }
                         listBox1.Items.Add("El Caballero Azul se movio: " + caballero.Numero + " Lugares");
+                    listBox1.Items.Add("------------------------------------------------------------------");
 
                     if (CantidadJugadores >= 2)
                     {
@@ -226,6 +222,15 @@ namespace CalabozosYDragones_lab
 
                 else if (turnoCaballeroAmarillo)
                 {
+
+                    if (Dificultad == 1 || Dificultad == 2)
+                    {
+                        DragonAmarillo1.Visible = true;
+                        DragonAmarillo2.Visible = true;
+                        dragones.OpcionDragones = 3;
+                        dragones.Jugar(DragonAmarillo1, DragonAmarillo2);
+                    }
+                    
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 3;
@@ -239,7 +244,16 @@ namespace CalabozosYDragones_lab
                         if (caballero.MismoLugarAliadoAmarillo == true)
                         {
                             MessageBox.Show("Mueve 5 lugares Amarillo");
+                            listBox1.Items.Add("Aumento 5 lugares el Amarillo");
                         }
+
+                        if (caballero.MismoLugarEnemigoAmarillo == true)
+                        {
+                            MessageBox.Show("Retrocede 5 lugares Amarillo");
+                            listBox1.Items.Add("Retrocede 5 lugares el Amarillo");
+                        }
+
+
                     }
                     
                     caballero.VerficarGanador();
@@ -254,6 +268,7 @@ namespace CalabozosYDragones_lab
 
                     }
                         listBox1.Items.Add("El Caballero Amarillo se movio: " + caballero.Numero + " Lugares");
+                    listBox1.Items.Add("------------------------------------------------------------------");
 
                     if (CantidadJugadores >= 3)
                     {
@@ -266,6 +281,15 @@ namespace CalabozosYDragones_lab
                 }
                 else if (turnoCaballeroVerde)
                 {
+
+                    if (Dificultad == 1 || Dificultad == 2)
+                    {
+                        DragonVerde1.Visible = true;
+                        DragonVerde2.Visible = true;
+                        dragones.OpcionDragones = 4;
+                        dragones.Jugar(DragonVerde1, DragonVerde2);
+                    }
+
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 4;
@@ -279,6 +303,9 @@ namespace CalabozosYDragones_lab
                         if (caballero.MismoLugarAliadoVerde == true)
                         {
                             MessageBox.Show("Mueve 5 lugares Verde");
+                            listBox1.Items.Add("Aumenta 5 lugares Verde");
+                           
+
                         }
                     }
                    
@@ -297,6 +324,8 @@ namespace CalabozosYDragones_lab
                     }
 
                     listBox1.Items.Add("El Caballero Verde se movio: " + caballero.Numero + " Lugares");
+                    listBox1.Items.Add("------------------------------------------------------------------");
+
                     turnoCaballeroRosado = true;
                 }
                 

@@ -14,8 +14,9 @@ namespace CalabozosYDragones_lab
         public int Posicion { get; set; }
         int cantidadJugadores = 0;
         Caballero caballero;
-        public int Numero { get; set; }
+
         protected Caballero[] caballeros = new Caballero[4];
+
         public Basico(int posicion,int cantidadJugadores)
         {
             caballero = new Caballero(posicion);
@@ -28,7 +29,7 @@ namespace CalabozosYDragones_lab
                 {
                     caballeros[i] = caballero;
                 }
-                
+               
             }
              
         }

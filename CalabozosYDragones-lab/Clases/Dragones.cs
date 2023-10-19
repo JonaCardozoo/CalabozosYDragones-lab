@@ -22,8 +22,6 @@ namespace CalabozosYDragones_lab
            base.Posicion = posicion;          
         }
 
-        
-
         public override void Jugar(Panel Dragon1, Panel Dragon2)
         {
 
@@ -61,25 +59,37 @@ namespace CalabozosYDragones_lab
 
                     break;
 
-                //case 3:
+                case 3:
 
-                //    PosicionAmarillo += MoverDragon();
-                //    ColumnaAmarillo = (PosicionAmarillo % 10) * 90;
-                //    FilaAmarillo = (PosicionAmarillo / 10) * 90;
-                //    Caballeros.Left = 55 + ColumnaAmarillo;
-                //    Caballeros.Top = 65 + FilaAmarillo;
+                    PosicionDragonAmarillo1 = MoverDragon();
+                    ColumnaDragonAmarillo1 = (PosicionDragonAmarillo1 % 10) * 90;
+                    FilaDragonAmarillo1 = (PosicionDragonAmarillo1 / 10) * 90;
+                    Dragon1.Left = 55 + ColumnaDragonAmarillo1;
+                    Dragon1.Top = 65 + FilaDragonAmarillo1;
 
-                //    break;
+                    PosicionDragonAmarillo2 = MoverDragon();
+                    ColumnaDragonAmarillo2 = (PosicionDragonAmarillo2 % 10) * 90;
+                    FilaDragonAmarillo2 = (PosicionDragonAmarillo2 / 10) * 90;
+                    Dragon2.Left = 55 + ColumnaDragonAmarillo2;
+                    Dragon2.Top = 65 + FilaDragonAmarillo2;
 
-                //case 4:
+                    break;
 
-                //    PosicionVerde += MoverDragon();
-                //    ColumnaVerde = (PosicionVerde % 10) * 90;
-                //    FilaVerde = (PosicionVerde / 10) * 90;
-                //    Caballeros.Left = 55 + ColumnaVerde;
-                //    Caballeros.Top = 65 + FilaVerde;
+                case 4:
 
-                //    break;
+                    PosicionDragonVerde1 = MoverDragon();
+                    ColumnaDragonVerde1 = (PosicionDragonVerde1 % 10) * 90;
+                    FilaDragonVerde1 = (PosicionDragonVerde1 / 10) * 90;
+                    Dragon1.Left = 55 + ColumnaDragonVerde1;
+                    Dragon1.Top = 65 + FilaDragonVerde1;
+
+                    PosicionDragonVerde2 = MoverDragon();
+                    ColumnaDragonVerde2 = (PosicionDragonVerde2 % 10) * 90;
+                    FilaDragonVerde2 = (PosicionDragonVerde2 / 10) * 90;
+                    Dragon2.Left = 55 + ColumnaDragonVerde2;
+                    Dragon2.Top = 65 + FilaDragonVerde2;
+
+                    break;
 
             }
         }

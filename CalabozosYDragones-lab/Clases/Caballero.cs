@@ -55,25 +55,24 @@ namespace CalabozosYDragones_lab
                 case 1:
                     
                     PosicionRosado += MoverPieza();
-                    ColumnaRosado = (PosicionRosado % 10) * 90;
-                    FilaRosado = (PosicionRosado / 10) * 90;
-                    Caballeros.Left = 55 + ColumnaRosado;
-                    Caballeros.Top = 65 + FilaRosado;
 
                     if (PosicionRosado == PosicionDragonRosa1)
                     {
+                        MessageBox.Show("Aumenta 5 lugares ROSA");
                         MismoLugarAliadoRosa = true;
                         PosicionRosado += 5;
                     }
 
                     else if (PosicionRosado == PosicionDragonRosa2)
                     {
+                        MessageBox.Show("Aumenta 5 lugares ROSA");
                         MismoLugarAliadoRosa = true;
                         PosicionRosado += 5;
                     }
 
                     else if (PosicionRosado == PosicionDragonAzul1)
                     {
+                        MessageBox.Show("Retrocede 5 lugares ROSA");
                         MismoLugarEnemigoRosa = true;
                         PosicionRosado -= 5;
 
@@ -81,20 +80,25 @@ namespace CalabozosYDragones_lab
 
                     else if (PosicionRosado == PosicionDragonAzul2)
                     {
+                        MessageBox.Show("Aumenta 5 lugares ROSA");
                         MismoLugarEnemigoRosa = true;
                         PosicionRosado -= 5;
                     }
+                    ColumnaRosado = (PosicionRosado % 10) * 90;
+                    FilaRosado = (PosicionRosado / 10) * 90;
+                    Caballeros.Left = 55 + ColumnaRosado;
+                    Caballeros.Top = 65 + FilaRosado;
+
+                    
 
                     break;
                 case 2:
+
                     PosicionAzul += MoverPieza();
-                    ColumnaAzul = (PosicionAzul % 10) * 90;
-                    FilaAzul = (PosicionAzul / 10) * 90;
-                    Caballeros.Left = 55 + ColumnaAzul;
-                    Caballeros.Top = 65 + FilaAzul;
 
                     if (PosicionAzul == PosicionDragonAzul1)
                     {
+                        MessageBox.Show("Aumenta 5 lugares AZUL");
                         MismoLugarAliadoAzul = true;
                         PosicionAzul += 5;
 
@@ -102,6 +106,7 @@ namespace CalabozosYDragones_lab
 
                     if (PosicionAzul == PosicionDragonAzul2)
                     {
+                        MessageBox.Show("Aumenta 5 lugares AZUL");
                         MismoLugarAliadoAzul = true;
                         PosicionAzul += 5;
 
@@ -109,16 +114,22 @@ namespace CalabozosYDragones_lab
 
                     else if (PosicionRosado == PosicionDragonRosa1)
                     {
+                        MessageBox.Show("retrocede 5 lugares AZUL");
                         MismoLugarEnemigoAzul = true;
                         PosicionAzul -= 5;
                     }
                     else if (PosicionRosado == PosicionDragonRosa1)
                     {
+                        MessageBox.Show("Retrocede 5 lugares AZUL");
                         MismoLugarEnemigoAzul = true;
                         PosicionAzul -= 5;
 
                     }
 
+                    ColumnaAzul = (PosicionAzul % 10) * 90;
+                    FilaAzul = (PosicionAzul / 10) * 90;
+                    Caballeros.Left = 55 + ColumnaAzul;
+                    Caballeros.Top = 65 + FilaAzul;
 
                     break;
 
@@ -143,6 +154,7 @@ namespace CalabozosYDragones_lab
                         PosicionAmarillo += 5;
 
                     }
+
 
                     break;
 

@@ -39,7 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnJugar = new System.Windows.Forms.Button();
             this.DragonVerde2 = new System.Windows.Forms.Panel();
             this.DragonVerde1 = new System.Windows.Forms.Panel();
             this.DragonAzul2 = new System.Windows.Forms.Panel();
@@ -141,18 +141,18 @@
             0});
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
             // 
-            // button1
+            // BtnJugar
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatAppearance.BorderSize = 1200;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.BtnJugar.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BtnJugar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BtnJugar.FlatAppearance.BorderSize = 1200;
+            this.BtnJugar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Red;
+            this.BtnJugar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            resources.ApplyResources(this.BtnJugar, "BtnJugar");
+            this.BtnJugar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BtnJugar.Name = "BtnJugar";
+            this.BtnJugar.UseVisualStyleBackColor = false;
+            this.BtnJugar.Click += new System.EventHandler(this.btnJugar_Click_1);
             // 
             // DragonVerde2
             // 
@@ -292,7 +292,7 @@
             this.Controls.Add(this.DragonRosa1);
             this.Controls.Add(this.Calabozo1);
             this.Controls.Add(this.CaballeroRosa);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnJugar);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -323,7 +323,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnJugar;
         private System.Windows.Forms.Panel DragonVerde2;
         private System.Windows.Forms.Panel DragonVerde1;
         private System.Windows.Forms.Panel DragonAzul2;
