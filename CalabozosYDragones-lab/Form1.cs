@@ -31,6 +31,7 @@ namespace CalabozosYDragones_lab
         bool turnoCaballeroAzul = false;
         bool turnoCaballeroAmarillo = false;
         bool turnoCaballeroVerde = false;
+        
 
         public Form1()
         {
@@ -87,6 +88,7 @@ namespace CalabozosYDragones_lab
             List<Panel> caballeros = new List<Panel> { CaballeroAzul, CaballeroRosa, CaballeroAmarillo, CaballeroVerde};
             List<Panel> dragoness = new List<Panel> { DragonRosa1, DragonRosa2, DragonAzul1, DragonAzul2, DragonAmarillo1, DragonAmarillo2, DragonVerde1, DragonVerde2 };
             int CantidadJugadores = Convert.ToInt32(numericUpDown1.Value);
+            Panel dragones_Todos = new Panel();
             int Dificultad = comboBox1.SelectedIndex;
             caballero = new Caballero(1);
             jugadorHumano = new Jugador(textBox1.Text);
@@ -94,9 +96,9 @@ namespace CalabozosYDragones_lab
             intermedio = new Intermedio(1,CantidadJugadores);
             experto = new Experto(1,CantidadJugadores);
             dragones = new Dragones(1);
+
             if (comboBox1.SelectedItem != null)
             {
-                
                 numericUpDown1.Enabled = false;
                 comboBox1.Enabled = false;
                
@@ -130,6 +132,12 @@ namespace CalabozosYDragones_lab
                         dragones.Jugar(DragonRosa1, DragonRosa2);
                     }
 
+                    else if (Dificultad == 0)
+                    {
+                        DragonRosa1.Visible = false;
+                        DragonRosa2.Visible = false;
+                    }
+                   
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 1;
@@ -155,6 +163,13 @@ namespace CalabozosYDragones_lab
                     {
                         foreach (Panel caballeroColor in caballeros)
                                 basico.PosicionInicialCaballero(caballeroColor);
+
+                       
+                            foreach (Panel DragonesColor in dragoness)
+                            {
+                                intermedio.PosicionInicialDragones(DragonesColor, dragones_Todos);
+                            }
+                        
                         WinnerRosa winnerR = new WinnerRosa(4);
                         winnerR.ShowDialog();
                         textBox1.Enabled = true;
@@ -178,6 +193,12 @@ namespace CalabozosYDragones_lab
                         DragonAzul2.Visible = true;
                         dragones.OpcionDragones = 2;
                         dragones.Jugar(DragonAzul1, DragonAzul2);
+                    }
+
+                    else if (Dificultad == 0)
+                    {
+                        DragonAzul1.Visible = false;
+                        DragonAzul2.Visible = false;
                     }
 
                     dado.Visible = false;
@@ -206,6 +227,13 @@ namespace CalabozosYDragones_lab
                     {
                         foreach (Panel caballeroColor in caballeros)
                                 basico.PosicionInicialCaballero(caballeroColor);
+
+                        
+                            foreach (Panel DragonesColor in dragoness)
+                            {
+                                intermedio.PosicionInicialDragones(DragonesColor, dragones_Todos);
+                            }
+                        
 
                         WinnerAzul winnerA = new WinnerAzul(4);
                         winnerA.ShowDialog();
@@ -237,7 +265,13 @@ namespace CalabozosYDragones_lab
                         dragones.OpcionDragones = 3;
                         dragones.Jugar(DragonAmarillo1, DragonAmarillo2);
                     }
-                    
+
+                    else if (Dificultad == 0)
+                    {
+                        DragonAmarillo1.Visible = false;
+                        DragonAmarillo2.Visible = false;
+                    }
+
                     dado.Visible = false;
                     pBdado.Visible = true;
                     caballero.TurnoCaballero = 3;
@@ -268,6 +302,13 @@ namespace CalabozosYDragones_lab
                         foreach (Panel caballeroColor in caballeros)
                                  basico.PosicionInicialCaballero(caballeroColor);
 
+                       
+                            foreach (Panel DragonesColor in dragoness)
+                            {
+                                intermedio.PosicionInicialDragones(DragonesColor, dragones_Todos);
+                            }
+                        
+
                         WinnerAmarillo winnerAM = new WinnerAmarillo(4);
                         winnerAM.ShowDialog();
                         textBox1.Enabled = true;
@@ -296,6 +337,12 @@ namespace CalabozosYDragones_lab
                         DragonVerde2.Visible = true;
                         dragones.OpcionDragones = 4;
                         dragones.Jugar(DragonVerde1, DragonVerde2);
+                    }
+
+                    else if (Dificultad == 0)
+                    {
+                        DragonVerde1.Visible = false;
+                        DragonVerde2.Visible = false;
                     }
 
                     dado.Visible = false;
@@ -328,6 +375,13 @@ namespace CalabozosYDragones_lab
                         
                         foreach (Panel caballeroColor in caballeros)
                                 basico.PosicionInicialCaballero(caballeroColor);
+
+                        
+                            foreach (Panel DragonesColor in dragoness)
+                            {
+                                intermedio.PosicionInicialDragones(DragonesColor, dragones_Todos);
+                            }
+                        
 
                         WinnerVerde winnerV = new WinnerVerde(4);
                         winnerV.ShowDialog();
