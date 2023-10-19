@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using CalabozosYDragones_lab.Clases;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,20 +12,23 @@ namespace CalabozosYDragones_lab
     internal class Dragones : Pieza
     {
         
-        public int Numero {get; set; }
+        public int Numero { get; set; }
         
 
         public int OpcionDragones { get; set; }
+        public int Numero2 { get; set; }
+
 
         static Random moverDragones = new Random();
         public Dragones(int posicion): base(posicion) 
         { 
            base.Posicion = posicion;          
         }
+        
 
         public override void Jugar(Panel Dragon1, Panel Dragon2)
         {
-
+            
             switch (OpcionDragones)
             {
                 case 1:
@@ -35,7 +39,7 @@ namespace CalabozosYDragones_lab
                     Dragon1.Left = 55 + ColumnaDragonRosa1;
                     Dragon1.Top = 65 + FilaDragonRosa1;
 
-                    PosicionDragonRosa2 = MoverDragon();
+                    PosicionDragonRosa2 = MoverDragon1();
                     ColumnaDragonRosa2 = (PosicionDragonRosa2 % 10) * 90;
                     FilaDragonRosa2 = (PosicionDragonRosa2 / 10) * 90;
                     Dragon2.Left = 55 + ColumnaDragonRosa2;
@@ -50,7 +54,7 @@ namespace CalabozosYDragones_lab
                     Dragon1.Left = 55 + ColumnaDragonAzul1;
                     Dragon1.Top = 65 + FilaDragonAzul1;
 
-                    PosicionDragonAzul2 = MoverDragon();
+                    PosicionDragonAzul2 = MoverDragon1();
                     ColumnaDragonAzul2 = (PosicionDragonAzul2 % 10) * 90;
                     FilaDragonAzul2 = (PosicionDragonAzul2 / 10) * 90;
                     Dragon2.Left = 55 + ColumnaDragonAzul2;
@@ -67,7 +71,7 @@ namespace CalabozosYDragones_lab
                     Dragon1.Left = 55 + ColumnaDragonAmarillo1;
                     Dragon1.Top = 65 + FilaDragonAmarillo1;
 
-                    PosicionDragonAmarillo2 = MoverDragon();
+                    PosicionDragonAmarillo2 = MoverDragon1();
                     ColumnaDragonAmarillo2 = (PosicionDragonAmarillo2 % 10) * 90;
                     FilaDragonAmarillo2 = (PosicionDragonAmarillo2 / 10) * 90;
                     Dragon2.Left = 55 + ColumnaDragonAmarillo2;
@@ -83,7 +87,7 @@ namespace CalabozosYDragones_lab
                     Dragon1.Left = 55 + ColumnaDragonVerde1;
                     Dragon1.Top = 65 + FilaDragonVerde1;
 
-                    PosicionDragonVerde2 = MoverDragon();
+                    PosicionDragonVerde2 = MoverDragon1();
                     ColumnaDragonVerde2 = (PosicionDragonVerde2 % 10) * 90;
                     FilaDragonVerde2 = (PosicionDragonVerde2 / 10) * 90;
                     Dragon2.Left = 55 + ColumnaDragonVerde2;
@@ -103,10 +107,16 @@ namespace CalabozosYDragones_lab
         {
             Numero = moverDragones.Next(1,49);
             return Numero;
-
         }
 
-        
+        public int MoverDragon1()
+        {
+            Numero2 = moverDragones.Next(1, 49);
+            return Numero2;
+        }
+
+
+
 
     }
 }

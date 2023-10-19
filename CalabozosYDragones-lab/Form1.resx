@@ -2503,10 +2503,14 @@
 </value>
   </data>
   <data name="pBdado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>980, 443</value>
+    <value>1040, 493</value>
   </data>
   <data name="pBdado.Size" type="System.Drawing.Size, System.Drawing">
-    <value>224, 213</value>
+    <value>162, 153</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pBdado.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
   </data>
   <data name="pBdado.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -2530,7 +2534,7 @@
     <value>Impact, 72pt, style=Bold</value>
   </data>
   <data name="dado.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1110, 529</value>
+    <value>1071, 520</value>
   </data>
   <data name="dado.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 117</value>
@@ -16364,7 +16368,6 @@
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>916, 551</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>StretchImage</value>
   </data>
@@ -18783,7 +18786,7 @@
     <value>937, 281</value>
   </data>
   <data name="listBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>342, 160</value>
+    <value>368, 186</value>
   </data>
   <data name="listBox1.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -19023,10 +19026,10 @@
     <value>2</value>
   </data>
   <data name="btnHistorialPartidas.Location" type="System.Drawing.Point, System.Drawing">
-    <value>815, 567</value>
+    <value>1208, 590</value>
   </data>
   <data name="btnHistorialPartidas.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 56</value>
+    <value>106, 56</value>
   </data>
   <data name="btnHistorialPartidas.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -19050,13 +19053,13 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>34</value>
+    <value>25</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1291, 685</value>
+    <value>1317, 668</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

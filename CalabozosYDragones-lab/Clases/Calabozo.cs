@@ -10,7 +10,7 @@ namespace CalabozosYDragones_lab.Clases
 {
     internal class Calabozo
     {
-    
+        
         public int Cala { get; set; }
         public Random PosicionCalabozo = new Random();
 
@@ -21,10 +21,10 @@ namespace CalabozosYDragones_lab.Clases
 
         public int PosLeft()
         {
-
             int ran = PosicionCalabozo.Next(1, 49);
             int left = 55 + ((ran % 10) * 90);
             return left;
+
         }
         public int PosTop()
         {
