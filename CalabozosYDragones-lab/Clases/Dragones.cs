@@ -88,7 +88,7 @@ namespace CalabozosYDragones_lab
                     FilaDragonVerde2 = (PosicionDragonVerde2 / 10) * 90;
                     Dragon2.Left = 55 + ColumnaDragonVerde2;
                     Dragon2.Top = 65 + FilaDragonVerde2;
-
+                    
                     break;
 
             }

@@ -157,6 +157,10 @@ namespace CalabozosYDragones_lab
                                 basico.PosicionInicialCaballero(caballeroColor);
                         WinnerRosa winnerR = new WinnerRosa(4);
                         winnerR.ShowDialog();
+                        textBox1.Enabled = true;
+                        comboBox1.Enabled = true;
+                        numericUpDown1.Enabled = true;
+
                     }
 
                     listBox1.Items.Add("El Caballero Rosado se movio: " + caballero.Numero);
@@ -193,7 +197,7 @@ namespace CalabozosYDragones_lab
 
                         if (caballero.MismoLugarEnemigoAzul == true)
                         {
-                            listBox1.Items.Add("Retrocede 5 lugares el rosa");
+                            listBox1.Items.Add("Retrocede 5 lugares el Azul");
                         }
                     }
                     
@@ -205,6 +209,9 @@ namespace CalabozosYDragones_lab
 
                         WinnerAzul winnerA = new WinnerAzul(4);
                         winnerA.ShowDialog();
+                        textBox1.Enabled = true;
+                        comboBox1.Enabled = true;
+                        numericUpDown1.Enabled = true;
 
                     }
                         listBox1.Items.Add("El Caballero Azul se movio: " + caballero.Numero + " Lugares");
@@ -243,13 +250,11 @@ namespace CalabozosYDragones_lab
                     {
                         if (caballero.MismoLugarAliadoAmarillo == true)
                         {
-                            MessageBox.Show("Mueve 5 lugares Amarillo");
                             listBox1.Items.Add("Aumento 5 lugares el Amarillo");
                         }
 
                         if (caballero.MismoLugarEnemigoAmarillo == true)
                         {
-                            MessageBox.Show("Retrocede 5 lugares Amarillo");
                             listBox1.Items.Add("Retrocede 5 lugares el Amarillo");
                         }
 
@@ -265,10 +270,13 @@ namespace CalabozosYDragones_lab
 
                         WinnerAmarillo winnerAM = new WinnerAmarillo(4);
                         winnerAM.ShowDialog();
+                        textBox1.Enabled = true;
+                        comboBox1.Enabled = true;
+                        numericUpDown1.Enabled = true;
 
                     }
                         listBox1.Items.Add("El Caballero Amarillo se movio: " + caballero.Numero + " Lugares");
-                    listBox1.Items.Add("------------------------------------------------------------------");
+                        listBox1.Items.Add("------------------------------------------------------------------");
 
                     if (CantidadJugadores >= 3)
                     {
@@ -302,9 +310,13 @@ namespace CalabozosYDragones_lab
                     {
                         if (caballero.MismoLugarAliadoVerde == true)
                         {
-                            MessageBox.Show("Mueve 5 lugares Verde");
                             listBox1.Items.Add("Aumenta 5 lugares Verde");
                            
+                        }
+                        else if (caballero.MismoLugarEnemigoVerde == true)
+                        {
+                            listBox1.Items.Add("Retrocede 5 lugares Verde");
+
 
                         }
                     }
@@ -317,9 +329,11 @@ namespace CalabozosYDragones_lab
                         foreach (Panel caballeroColor in caballeros)
                                 basico.PosicionInicialCaballero(caballeroColor);
 
-
                         WinnerVerde winnerV = new WinnerVerde(4);
                         winnerV.ShowDialog();
+                        textBox1.Enabled = true;
+                        comboBox1.Enabled = true;
+                        numericUpDown1.Enabled = true;
 
                     }
 
